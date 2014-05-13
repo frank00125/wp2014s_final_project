@@ -1,0 +1,98 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background: black;
+}
+section{
+	display: block;
+	padding-top: 30px;
+}
+#content{
+	padding-top:0px;
+	background: url(https://googledrive.com/host/0B6q3hoYduwBjMkdWM0pVRXZnaDg/);
+	background-size: 100% 100%;
+	margin-top:4em;: 
+}
+
+
+#title{
+	margin-top: -4em;
+	margin-left: 7em;
+
+}
+#title:hover{
+	cursor: pointer;
+}
+#register{
+	/*margin-left: 200px;
+	margin-top: 20px;*/
+	
+	
+	
+}
+#line{
+
+	width: 1px;
+	height: 15em;
+	background-color: #696969;
+	margin-right:10em;
+	
+	/*margin-top: 50px;
+	margin-left:140px;*/
+}
+#login{
+	/*margin-right: 200px;
+	margin-top: 20px;*/
+
+	
+	
+
+
+}
+#label{
+	font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+input[type=text]
+{
+    color: #979797;
+    height: 33px;
+    padding: 1px;
+    text-decoration: none;
+    border-radius: 10px;
+
+    border: 0;
+}
+input[type=password]
+{
+    color: #979797;
+    height: 33px;
+    padding: 1px;
+    text-decoration: none;
+    border-radius: 10px;
+
+    border: 0;
+}
+#submit{
+	/*margin-left: 90px*/}
+#submit:hover{
+	background: #f5a00e;
+  	background-image: -webkit-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -moz-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -ms-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -o-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: linear-gradient(to bottom, #f5a00e, #0ef0b0);
+  	cursor: pointer; 
+}
+#loginbutton:hover{
+	cursor: pointer;
+}
+#banner{
+	background-image: url(https://googledrive.com/host/0B6q3hoYduwBjSmNJQmtrTnlTMW8/);
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+		background-size: cover;
+}
+
+

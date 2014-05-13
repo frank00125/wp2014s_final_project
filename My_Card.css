@@ -1,4 +1,7 @@
 body{
+	width: 1366px;
+	height: 768px;
+	margin: 0px;
 	background-color: black;
 	background-image: url("img/cardbox_collection/background_main.jpg");
 	background-repeat: no-repeat;
@@ -12,7 +15,7 @@ p, a{
 
 div#head{
 	margin: 0px auto;
-	padding-top: 140px;
+	padding-top: 200px;
 	width: 1200px; 
 }
 
@@ -44,18 +47,21 @@ div.cardbox{
 
 div.name{
 	float: right;
-	margin: 8px 25px;
-	margin-bottom: 50px;
+	height: 70px;
+	margin: 10px 20px;
+	margin-bottom: 30px;
+	
 }
 
 p.rank, p.box{
 	display: inline-block;
 	color: white;
 	font-size: 24pt;
+	margin: 0px;
 }
 
 p.box{
-	margin-left: 30px;
+	margin-left: 40px;
 }
 
 
@@ -78,11 +84,13 @@ div.card{
 h5.title{
 	text-align: center;
 	color: gray;
+	margin: 13px 0px;
+	font-size: 20pt;
 }
 
 img.level{
 	width: 230px;
-	height: 148px;
+	height: 140px;
 }
 
 article.content p{
