@@ -1,0 +1,42 @@
+body{
+	width: 463px;
+	height: 663px;
+	background-color: black;
+}
+
+div.card{
+	display: inline-block;
+	width: 463px;
+	height: 663px;
+	margin: 0px auto;
+	background-color: white;
+	font-family: "Microsoft JhengHei";
+}
+
+h2.title{
+	text-align: center;
+	color: gray;
+}
+
+img.level{
+	display: block;
+	width: 100%;
+	margin: 0px auto;
+}
+
+article.content p{
+	font-size: 16pt;
+	margin: 5px;
+}
+
+div.share{
+	margin-top: 70px;
+}
+
+a.fb img, a.love img, a.readmore img{
+	display: inline-block;
+}
+
+a.readmore img{
+	margin-left: 235px;
+}

@@ -1,0 +1,115 @@
+body{
+	background-color: black;
+	background-image: url("img/cardbox_collection/background_main.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: "Microsoft JhengHei";
+}
+
+p, a{
+	font-family: "Microsoft JhengHei";
+}
+
+div#head{
+	margin: 0px auto;
+	padding-top: 140px;
+	width: 1200px; 
+}
+
+img#logo{
+	margin-left: 0px;
+}
+
+p#links{
+	position: relative;
+	display: inline-block;
+	float: right;
+	top: 50px;
+	font-size: 24pt;
+	color: white;
+}
+
+p#links a{
+	text-decoration: none;
+	color: white;
+}
+
+div.cardbox{
+	display: block;
+	width: 1274px;
+	margin: 0px auto;
+	background-image: url("img/cardbox_collection/cardBox.png");
+	background-repeat: no-repeat;
+}
+
+div.name{
+	float: right;
+	margin: 8px 25px;
+	margin-bottom: 50px;
+}
+
+p.rank, p.box{
+	display: inline-block;
+	color: white;
+	font-size: 24pt;
+}
+
+p.box{
+	margin-left: 30px;
+}
+
+
+div#cards{
+	display: inline-block;
+	width: 1244px;
+	height: 350px;
+	padding: 15px 15px;
+	background-color: rgb(255, 132, 31);
+}
+
+div.card{
+	display: inline-block;
+	width: 231px;
+	height: 331.5px;
+	background-color: white;
+	margin: 0px 7px;
+}
+
+h5.title{
+	text-align: center;
+	color: gray;
+}
+
+img.level{
+	width: 230px;
+	height: 148px;
+}
+
+article.content p{
+	font-size: 8pt;
+	margin: 5px;
+}
+
+div.share{
+	margin-top: 40px;
+}
+
+a.fb img, a.love img, a.readmore img{
+	display: inline-block;
+	width: 24px;
+	height: 27px;
+}
+
+a.readmore img{
+	width: 57.5px;
+	height: 19.5px;
+	margin-left: 108px;
+}
+
+footer#foot{
+	display: block;
+	background-color:black;
+	width: auto;
+	height: auto;
+}
+

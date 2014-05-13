@@ -1,0 +1,118 @@
+body{
+ 
+  background-color: #000;
+background-image: url(https://drive.google.com/uc?export=view&id=0B2EvE748JOS3VTF3U3F1WE1HQVU);
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+		background-size: cover;
+}
+
+h1{
+
+font-family: "微軟正黑體", "Microsoft JhengHei";
+   font-size: 30px;
+    color: #FFFFFF	;
+  
+  position: relative; 
+  top: -70px; 
+  left: 6px; 
+}
+
+#logo{
+ 
+ margin-left: 8em;
+	margin-top: 10.5em;
+}
+#logo:hover{
+	cursor: pointer;
+}
+
+#dontmove{
+   position: absolute; 
+  top: 16.8em; 
+  left:60.4em; 
+  z-index: 2;
+  
+}
+
+
+
+#front{
+   position: absolute; 
+  top: 17.2em; 
+  left: 4.7em; 
+  z-index: 2;
+  
+}
+
+#loginsignup{
+  
+  position: absolute; 
+  right: -20px;
+	bottom: 0.5em;
+  font-family: "微軟正黑體", "Microsoft JhengHei";
+   font-size: 30px;
+    color: #FFFFFF	;
+  
+}
+
+
+
+#leftbottom{
+  position: absolute; 
+  top: 0px; 
+  right: 0px; 
+   z-index: 2;
+  
+  
+}
+#rightbottom{
+  position: absolute; 
+  top:0px; 
+  right: 100x; 
+   z-index: 2;
+  
+}
+
+#kinguser1{
+   position: absolute; 
+  top: 24em; 
+  left: 9em; 
+  z-index: 2;
+  
+}
+#triangle{
+   position: absolute; 
+  top: -10px; 
+  left:-40px; 
+  z-index: 10;
+  
+}
+
+#userpic{
+   position: absolute; 
+  top: 24px; 
+  left: 8px;   
+}
+#useraccount{
+  
+  position: absolute; 
+  top: 250px; 
+  left:30px;   
+  font-family: "微軟正黑體", "Microsoft JhengHei";
+   font-size: 30px;
+    color: #CCCCCC	;
+  }
+#kinguser2{
+   position: absolute; 
+  top: 24em; 
+  left: 28em; 
+  z-index: 2;
+}
+
+#kinguser3{
+   position: absolute; 
+  top: 24em; 
+  left: 47em; 
+  z-index: 2;
+}
