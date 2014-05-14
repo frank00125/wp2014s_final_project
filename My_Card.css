@@ -1,11 +1,10 @@
 body{
-	width: 1366px;
-	height: 768px;
+	max-width: 1366px;
 	margin: 0px;
 	background-color: black;
 	background-image: url("img/cardbox_collection/background_main.jpg");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-size: contain;
 	font-family: "Microsoft JhengHei";
 }
 
@@ -14,35 +13,25 @@ p, a{
 }
 
 div#head{
-	margin: 0px auto;
-	padding-top: 200px;
-	width: 1200px; 
+	margin-top: 15%;
+	margin-left: 5%;
+	max-width: 1200px;
+	width: auto;
 }
 
 img#logo{
+	display: inline;
 	margin-left: 0px;
-}
-
-p#links{
-	position: relative;
-	display: inline-block;
-	float: right;
-	top: 50px;
-	font-size: 24pt;
-	color: white;
-}
-
-p#links a{
-	text-decoration: none;
-	color: white;
+	max-width: 100%; 
+	width: auto;
 }
 
 div.cardbox{
-	display: block;
-	width: 1274px;
+	display: inline-block;
+	max-width: 1274px;
 	margin: 0px auto;
-	background-image: url("img/cardbox_collection/cardBox.png");
-	background-repeat: no-repeat;
+	/*background-image: url("img/cardbox_collection/cardBox.png");
+	background-repeat: no-repeat;*/
 }
 
 div.name{
@@ -67,16 +56,17 @@ p.box{
 
 div#cards{
 	display: inline-block;
-	width: 1244px;
+	max-width: 1244px;
 	height: 350px;
 	padding: 15px 15px;
+	margin: 0px auto;
 	background-color: rgb(255, 132, 31);
 }
 
 div.card{
 	display: inline-block;
-	width: 231px;
-	height: 331.5px;
+	max-width: 215px;
+	max-height: 331.5px;
 	background-color: white;
 	margin: 0px 7px;
 }
@@ -89,7 +79,7 @@ h5.title{
 }
 
 img.level{
-	width: 230px;
+	width: 215px;
 	height: 140px;
 }
 
@@ -104,14 +94,14 @@ div.share{
 
 a.fb img, a.love img, a.readmore img{
 	display: inline-block;
-	width: 24px;
-	height: 27px;
+	max-width: 24px;
+	max-height: 27px;
 }
 
 a.readmore img{
-	width: 57.5px;
-	height: 19.5px;
-	margin-left: 108px;
+	max-width: 57.5px;
+	max-height: 19.5px;
+	margin-left: 95px;
 }
 
 footer#foot{

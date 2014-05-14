@@ -1,118 +1,81 @@
 body{
- 
-  background-color: #000;
-background-image: url(https://drive.google.com/uc?export=view&id=0B2EvE748JOS3VTF3U3F1WE1HQVU);
+	max-width: 1366px;
+	margin: 0px;
+	background-color: black;
+	background-image: url("img/cardbox_collection/background_main.jpg");
 	background-repeat: no-repeat;
-	-moz-background-size: cover;
-		background-size: cover;
+	background-size: contain;
+	font-family: "Microsoft JhengHei";
 }
 
-h1{
-
-font-family: "微軟正黑體", "Microsoft JhengHei";
-   font-size: 30px;
-    color: #FFFFFF	;
-  
-  position: relative; 
-  top: -70px; 
-  left: 6px; 
+p, a{
+	font-family: "Microsoft JhengHei";
 }
 
-#logo{
- 
- margin-left: 8em;
-	margin-top: 10.5em;
-}
-#logo:hover{
-	cursor: pointer;
+div#head{
+	margin: 0px auto;
+	margin-top: 15%;
+	max-width: 1224px;
+	width: auto;
 }
 
-#dontmove{
-   position: absolute; 
-  top: 16.8em; 
-  left:60.4em; 
-  z-index: 2;
-  
+img#logo{
+	display: inline;
+	margin-left: 0px;
+	max-width: 100%; 
+	width: auto;
 }
 
-
-
-#front{
-   position: absolute; 
-  top: 17.2em; 
-  left: 4.7em; 
-  z-index: 2;
-  
+p#links{
+	display: inline-block;
+	float: right;
+	width: auto;
+	height: auto;
+	font-size: 24pt;
+	color: white;
+	margin-top: 72px;
 }
 
-#loginsignup{
-  
-  position: absolute; 
-  right: -20px;
-	bottom: 0.5em;
-  font-family: "微軟正黑體", "Microsoft JhengHei";
-   font-size: 30px;
-    color: #FFFFFF	;
-  
+p#links a{
+	text-decoration: none;
+	color: white;
 }
 
-
-
-#leftbottom{
-  position: absolute; 
-  top: 0px; 
-  right: 0px; 
-   z-index: 2;
-  
-  
-}
-#rightbottom{
-  position: absolute; 
-  top:0px; 
-  right: 100x; 
-   z-index: 2;
-  
+div.button{
+	z-index: -1;
+	display: inline;
+	float: right;
+	margin-right: 2%;
 }
 
-#kinguser1{
-   position: absolute; 
-  top: 24em; 
-  left: 9em; 
-  z-index: 2;
-  
-}
-#triangle{
-   position: absolute; 
-  top: -10px; 
-  left:-40px; 
-  z-index: 10;
-  
+div.people{
+	display: inline-block;
+	background-image: url();
+	background-color: rgb(255, 131, 31);
+	max-width: 1224px;
+	min-width: 1000px;
+	width: auto;
+	margin: 0px 0.35%;
+	height: 487px;
 }
 
-#userpic{
-   position: absolute; 
-  top: 24px; 
-  left: 8px;   
-}
-#useraccount{
-  
-  position: absolute; 
-  top: 250px; 
-  left:30px;   
-  font-family: "微軟正黑體", "Microsoft JhengHei";
-   font-size: 30px;
-    color: #CCCCCC	;
-  }
-#kinguser2{
-   position: absolute; 
-  top: 24em; 
-  left: 28em; 
-  z-index: 2;
+div.rank, div.track, div.share{
+	display: inline-block;
+	width: 280px;
+	height: 340px;
+	margin: 0px 25px;
+	margin-top: 50px;
+	background-color: brown;
 }
 
-#kinguser3{
-   position: absolute; 
-  top: 24em; 
-  left: 47em; 
-  z-index: 2;
+div.rankKing, div.trackKing, div.shareKing{
+	display: inline-block;
+	z-index: 2;
+	margin-left: -20px;
+	background-color: white;
+}
+
+img.rankMark, img.trackMark, img.shareMark{
+	display: inline-block;
+	z-index: 3;
 }
