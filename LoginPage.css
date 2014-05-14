@@ -1,0 +1,129 @@
+body{
+	max-width: 1366px;
+	background-color: black;
+	background-image: url("img/cardbox_collection/background_main.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	font-family: "Microsoft JhengHei";
+	width: auto;
+}
+
+p, a{
+	font-family: "Microsoft JhengHei";
+}
+
+div#head{
+	margin: 0px auto;
+	margin-top: 15%;
+	max-width: 1200px;
+	width: auto;
+}
+
+img#logo{
+	display: inline;
+	margin-left: 20px;
+	max-width: 100%; 
+	width: auto;
+}
+
+div.loginArea{
+	max-width: 1224px;
+	height: 487px;
+	background-image: url("img/loginPage/login_1.png");
+}
+
+form.localLogin{
+
+	position: absolute;
+	left: 200px;
+	top: 510px;
+	width: 150px;
+}
+
+input[type="submit"]{
+position:abolute;
+	margin-left: 115px;
+	width: 280px;
+	height: 75px;
+	}
+	
+form.localLogin input[type="submit"]{
+	position:relative;
+	margin-left: 115px;
+	width: 100px;
+	height: 50px;
+	left:0 px;
+	top: 0 px;
+
+}
+	
+	.loginArea2{
+	position: absolute;
+	left: 560px;
+	top: 440px;
+	width: 400px;
+	}
+	
+	#log{
+	position: absolute;
+	left: -70px;
+	top: 170px;
+	width: 50px;
+	height: 25px;
+	}
+	
+.font{
+font-family: "Microsoft JhengHei";
+font-size:25px;
+}
+
+form.localLogin .font{
+
+	font-family: "Microsoft JhengHei";
+font-size:15px;
+}
+p{
+font-family: "Microsoft JhengHei";
+font-size:16px;
+}
+section{
+font-family:  "Microsoft JhengHei";
+font-size:30px;
+position: absolute;
+	left: 22em;
+	top: 15em;
+
+}
+#submit{
+	/*margin-left: 90px*/}
+#submit:hover{
+	background: #f5a00e;
+  	background-image: -webkit-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -moz-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -ms-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: -o-linear-gradient(top, #f5a00e, #0ef0b0);
+  	background-image: linear-gradient(to bottom, #f5a00e, #0ef0b0);
+  	cursor: pointer; 
+}
+
+#loginbutton:hover{
+	cursor: pointer;
+}
+
+#label{
+	font-family: "微軟正黑體", "Microsoft JhengHei";
+}
+#signuptomember{
+font-family:  "Microsoft JhengHei";
+
+position: absolute;
+	left: 1em;
+	top: -2.3em;
+}
+#finally{
+font-family:  "Microsoft JhengHei";
+position: absolute;
+	left: -1em;
+	top: -2.4em;
+}
+
