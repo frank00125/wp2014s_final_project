@@ -1,0 +1,64 @@
+body{
+	max-width: 1366px;
+	margin: 0px;
+	background-color: black;
+	background-image: url("img/cardbox_collection/background_main.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Microsoft JhengHei";
+	color: silver;
+}
+
+p, a{
+	font-family: "Microsoft JhengHei";
+}
+
+div#head{
+	margin-top: 15%;
+	margin-left: 5%;
+	max-width: 1200px;
+	width: auto;
+}
+
+img#logo{
+	display: inline-block;
+	margin-left: 0px;
+	max-width: 100%; 
+	width: auto;
+}
+
+div.ForgetPwd{
+	margin: 50px;
+	height: 200px;
+}
+
+h2{
+	text-align: center;
+	font-size: 36pt;
+	margin: 0px;
+}
+
+form{
+	width: 500px;
+	margin: 20px auto;
+	margin-top: 0px;
+}
+
+form input{
+	display: block;
+	margin: 10px auto;
+	width: 300px;
+}
+
+form input[type="image"]{
+	display: block;
+	margin: 0px auto;
+	width: 76.5px;
+	height: 44px;
+}
+
+form p{
+	font-size: 18pt;
+	text-align: center;
+	margin: 5px 0px;
+}
