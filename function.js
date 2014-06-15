@@ -13,16 +13,26 @@ function signUp(username,password,email){
 	
 	user.signUp(null, {
 		success: function(user) {
+			window.location.assign("LoginPage.html");
 		},
 		error: function(user, error) {
-			 console.log("Error: " + error.code + " " + error.message);
+			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
-	
-	var current_user = Parse.User.current();
-	return current_user;
 }
 
 function hasUser(){
 	return Parse.User.current() != NULL;
+}
+
+function logIn(username,password){
+	var usr = null;
+	Parse.User.logIn(username,password,{
+		success: function(user){
+			window.location.assign("My_Card.html");
+		},
+		error: function(user, error){
+			console.log("Error: " + error.code + " " + error.message);
+		}
+	});
 }
