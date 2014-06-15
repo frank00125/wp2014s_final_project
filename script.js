@@ -13,7 +13,7 @@
     // for FB.getLoginStatus().
           if (response.status === 'connected') {
       // Logged into your app and Facebook.
-            window.location.assign("My_Card.html");
+            window.location.href("http://frank00125.github.io/wp2014s_final_project/My_Card.html");
          } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
             FB.login(function (response) {
