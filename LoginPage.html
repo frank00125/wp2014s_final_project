@@ -2,49 +2,68 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>登入</title>
-		<script type="text/javascript" src="jQuery.js"></script>
+		<title>註冊</title>
+		<script type="text/javascript" src="script.js"></script>
 		<link rel="stylesheet" type="text/css" href="LoginPage.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	</head>
+	<script type="text/javascript">
+      		(function() {
+       			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       			po.src = 'https://apis.google.com/js/client:plusone.js';
+       			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     		})();
+    	</script>
 	<body>
+		<div id="fb-root"></div>
+			<script>
+				(function(d, s, id) {
+  				var js, fjs = d.getElementsByTagName(s)[0];
+  				if (d.getElementById(id)) return;
+  				js = d.createElement(s); js.id = id;
+  				js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=243758945748336&version=v2.0";
+  				fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
 		<div id="head">
 		<a href="index.html">
 			<img id="logo" src="img/cardbox_collection/logo.png"> </a>
+			<h1 id="status"></h1>
 		</div>
-		
 		<div class="loginArea">
-		
 			<form class="localLogin" action="Card_drawing.html" method="POST">
-			<h1 id="signuptomember">幹好累!</h1>
 				<form>
-							
-								<input type= "password" placeholder="輸入密碼">
-								<br>
-								<br>
-								<input type= "password" placeholder="密碼確認">
-								<br>
-								<br>
-								<a href="index.html">
-								<img id="submit" src="img\loginPage\submit.png"></a>
-								
-							</form>
-							
-				
+					<input type= "text" placeholder="電子信箱">
+					<br>
+					<br>
+					<input type= "password" placeholder="輸入密碼">
+					<br>
+					<br>
+					<input type= "password" placeholder="密碼確認">
+					<br>
+					<br>
+					<a href="index.html">
+					<img id="submit" src="img\loginPage\submit.png"></a>
+				</form>		
 			</form>
-			
-			
 			<div class="loginArea2">
 			<h1> 你也可以使用既有帳號登入</h1>
-				<form action="Card_drawing.html" method="POST">
-				<img id="loginbutton" src="img\loginPage\login_fb.png">
-					<!--<input type="submit" value="使用Facebook帳號登入" class="font" >-->
-					
-				</form>
-				<form action="Card_drawing.html" method="POST">
-				<img id="loginbutton" src="img\loginPage\login_google.png">
-					<!--<input type="submit" value="使用Google帳號登入" class="font" >-->
-				</form>
-</div>
+				<div>	
+					<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>				
+				</div>
+				<br>
+				<div>
+					<span id="signinButton">
+ 					 	<span class="g-signin" 
+ 					 		data-callback="signinCallback"
+    							data-clientid="37599769382-vfm74hfbl44j63d9ephobapb6opot2ne.apps.googleusercontent.com"
+    							data-cookiepolicy="single_host_origin"
+    							data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    							data-scope="https://www.googleapis.com/auth/plus.login">
+  						</span>
+					</span>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
