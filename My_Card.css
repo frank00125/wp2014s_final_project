@@ -4,7 +4,7 @@ body{
 	background-color: black;
 	background-image: url("img/cardbox_collection/background_main.jpg");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	font-family: "Microsoft JhengHei";
 }
 
@@ -13,8 +13,9 @@ p, a{
 }
 
 div.button{
+	z-index: 2;
 	float: right;
-	margin-right: 30px;
+	margin-right: 50px;
 	height: 55px;
 }
 
@@ -49,14 +50,13 @@ p#links a{
 }
 
 div.cardbox{
-	z-index: 2;
 	clear: both;
-	max-width: 1200px;
-	margin: 0px auto;
-	margin-right: 30px;
+	max-width: 1000px;
+	float: right;	
+	margin-right: 50px;
 	background-image: url("img/cardbox_collection/back_1.png");
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 }
 
 div.name{
@@ -80,14 +80,15 @@ p.box{
 
 
 div.cards, div.cards_start{
-	max-width: 1200px;
-	width: auto;
-	height: 350px;
-	padding: 15px 30px;
+	width: 800px;
+	height: 150px;
+	padding-right:100px;
 }
 
 div.cards{
 	background-color: rgb(255, 132, 31);
+	margin: 0px;
+	padding-left: 100px;
 }
 
 div.card{
@@ -95,26 +96,31 @@ div.card{
 	max-width: 215px;
 	max-height: 331.5px;
 	background-color: white;
-	margin: 0px 7px;
+	margin: 0px 10px;
 	margin-top: 10px;
 }
 
 div.cards_start{
-	clear: both;
-	margin: 0px auto;
-	margin-top: 30px;
+	display: block;
+	margin: 0px;
+	margin-left: 100px;
+	padding-top: 50px;
+	padding-bottom: 0px;
+	background-color: rgb(255, 132, 31);
 }
 
 h5.title{
 	text-align: center;
 	color: gray;
 	margin: 13px 0px;
-	font-size: 20pt;
+	font-size: 16pt;
 }
 
 img.level{
-	width: 215px;
-	height: 140px;
+	display: block;
+	margin: 0px auto;
+	width: 100px;
+	height: 75px;
 }
 
 article.content p{

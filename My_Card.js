@@ -6,17 +6,11 @@ $(document).ready(function(){
 		var query = Parse.Query(ownCard);
 		query.equalTo('user',current_user);
 		query.find({
-			success: function(results){
-				for(var i=0;i<results.length;i++){
-					var card = results[i].card;
-					var name = card.name;
-					var level = card.level;
-					
-					console.log(name);
-					console.log(level);
-				}
+			success: function(result){
+				var s = result;
 			},
 			error: function(error){
+				console.log("Error: " + error.code + " " + error.message);
 			}
 		});
 	}
