@@ -1,18 +1,13 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '243758945748336',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
-  
-  function statusChangeCallback(response) {
+
+      function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
-
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
           if (response.status === 'connected') {
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
@@ -74,6 +69,14 @@ window.fbAsyncInit = function() {
     });
   }
 
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '243758945748336',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
@@ -112,13 +115,6 @@ window.fbAsyncInit = function() {
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-
-$('div.fb-login-button').click(function() {
-  
-});
-
-
-  
   function signinCallback(authResult) {
   if (authResult['access_token']) {
     // Successfully authorized
