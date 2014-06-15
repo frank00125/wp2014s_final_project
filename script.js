@@ -12,7 +12,9 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
             console.log(response);
-            logIn(response.id,"123",response.email);
+            if(logIn(response.id,"") === false){
+                  signUp(response.id,"0000",response.email);
+            }
             
     });
             //window.location.assign("My_Card.html");
