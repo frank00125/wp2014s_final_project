@@ -24,7 +24,6 @@ function signUp(username,password,email){
 function logIn(username,password){
 	Parse.User.logIn(username,password,{
 		success: function(user){
-			window.location.assign("My_Card.html");
 		},
 		error: function(user, error){
 			console.log("Error: " + error.code + " " + error.message);
