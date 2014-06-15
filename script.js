@@ -22,7 +22,7 @@
                             window.location.reload();
                         };
                     }, {
-                        scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes', 
+                        scope: 'publish_actions', 
                         return_scopes: true
                     });
          } else {
@@ -32,7 +32,7 @@
                             window.location.reload();
                         };
                     }, {
-                        scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes', 
+                        scope: 'publish_actions',  
                         return_scopes: true
                     });
     }
