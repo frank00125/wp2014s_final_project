@@ -145,4 +145,4 @@ function disconnectUser(access_token) {
 // Could trigger the disconnect on a button click
 $('#revokeButton').click(disconnectUser);
 
-}
+})();
