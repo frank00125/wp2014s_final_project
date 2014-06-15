@@ -21,10 +21,6 @@ function signUp(username,password,email){
 	});
 }
 
-function hasUser(){
-	return Parse.User.current() != NULL;
-}
-
 function logIn(username,password){
 	Parse.User.logIn(username,password,{
 		success: function(user){
