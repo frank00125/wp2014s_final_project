@@ -18,7 +18,7 @@ $(document).ready(function(){
 				}
 				else{
 					var length = result.length;
-					var round = length / 4;
+					var round = parseInt(length / 4);
 					var last_round_number = length % 4;
 					for(var i=0;i<round;i++){
 						var s = "";
