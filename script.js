@@ -19,10 +19,10 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 		},
 		error: function(user, error){
 			var user = new Parse.User();
-	            user.set('username',response.id);
-	            user.set('password',"0000");
-	            user.set('email',response.email);
-	            user.set('score',0);
+	            		user.set('username',response.id);
+	            		user.set('password',"0000");
+	            		user.set('email',response.email);
+	            		user.set('score',0);
 
 	            user.signUp(null, {
 		            success: function(user) {
