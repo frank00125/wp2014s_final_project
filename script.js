@@ -1,6 +1,17 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '243758945748336',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
 
+$(document.getElementsByClassName('fb-login-button').click(function(){
+	
+	};)
       function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
@@ -69,14 +80,6 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     });
   }
 
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '243758945748336',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
