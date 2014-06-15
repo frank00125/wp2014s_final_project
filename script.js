@@ -1,7 +1,7 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-
-      function statusChangeCallback(response) {
+$(.fb-login-button).click(function() {
+  function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
     // The response object is returned with a status field that lets the
@@ -69,6 +69,8 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     });
   }
 
+});
+      
   window.fbAsyncInit = function() {
   FB.init({
     appId      : '243758945748336',
