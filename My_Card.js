@@ -49,12 +49,24 @@ $(document).ready(function(){
 		});
 	}
 	else{
-		alert("�еn�J");
+		alert("�еn�J");
 	}
 });
 
+
 $('#logout').click(function(){
-	Parse.User.logOut();
-	window.location.assign("LoginPage.html");
-	FB.logout(function(response){});
+	FB.getLoginStatus(function (response){
+		if(response.status === 'connected'){
+			FB.logout(function(response){
+				Parse.User.logOut();
+				window.location.assign("LoginPage.html");
+			});
+		} else if(response.status === 'not_authorized'){
+			FB.logout(function (response) {     
+				alert("請重新登入！");
+			});
+		} else{    // 使用者沒有登入 Facebook
+			alert("請重新登入！");
+		}
+	});
 });
