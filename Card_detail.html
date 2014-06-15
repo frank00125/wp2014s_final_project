@@ -7,6 +7,15 @@
 		<link rel="stylesheet" type="text/css" href="Card_detail.css">
 	</head>
 	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+ 			 var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=243758945748336&version=v2.0";
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 		<div class="card">
 			<h2 class="title">食品安全法</h5>
 			<img class="level" src="img/cardContent/levelsilver.png">
@@ -14,7 +23,7 @@
 				<p>案由：</p>
 				<p>係介紹這個法案的提起背景與提起人，為使用者在進入法案前有個初步了解</p>
 				<div class="share">
-					<a class="fb" href="LoginPage.html"><img src="img/cardContent/fb_share.png"></a>
+					<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button"></div>
 					<a class="love" href="LoginPage.html"><img src="img/cardContent/love.png"></a>
 					<a class="readmore" href=""><img src="img/cardContent/readmore.png"></a>
 				</div>
