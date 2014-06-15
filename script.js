@@ -1,6 +1,6 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-$(#fb-login-button).click(function() {
+$(document.getElementById(fb-login-button)).click(function() {
   function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
