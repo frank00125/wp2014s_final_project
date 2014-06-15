@@ -22,8 +22,8 @@ $(document).ready(function(){
 					for(var i=0;i<round;i++){
 						var s = "";
 						for(var j=4*i;j<4*i+3;j++){
-							var s1='<h5>'+result[i].name+'</h5>';
-							var s2="<img class='level' src='"+result[i].level+".jpg' alt='"+result[i].name+"' >";
+							var s1='<h5>'+result[j].name+'</h5>';
+							var s2="<img class='level' src='"+result[j].level+".jpg' alt='"+result[j].name+"' >";
 							s = "<div class='card'>"+s1+s2+"</div>";
 						}
 						
@@ -37,7 +37,7 @@ $(document).ready(function(){
 					for(var i=length-last_round_number;i<length;i++){
 						var s1='<h5>'+result[i].name+'</h5>';
 						var s2="<img class='level' src='"+result[i].level+".jpg' alt='"+result[i].name+"' >";
-						s = "<div class='card'>"+s1+s2+"</div
+						s = "<div class='card'>"+s1+s2+"</div>"
 						var ss = "<div class='cards'>"+s+"</div>"
 						$('div.cardbox').append(ss);
 					}
