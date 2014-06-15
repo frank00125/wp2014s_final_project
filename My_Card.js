@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var current_user = Parse.User.current();
 	if(current_user){
 		var ownCard = Parse.Object.extend("ownCard");
-		var query = Parse.Query(ownCard);
+		var query = new Parse.Query(ownCard);
 		query.equalTo('user',current_user);
 		query.find({
 			success: function(result){
