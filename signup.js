@@ -1,6 +1,7 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-document.getElementById("localLogin").addEventListener("submit",function(){
+      
+$('#localLogin').submit(function(){
         var user = new Parse.User();
             user.set("username", document.getElementById('email').value);
             user.set("password", document.getElementById('password').value);
@@ -12,4 +13,4 @@ document.getElementById("localLogin").addEventListener("submit",function(){
                   alert('fail');
                 }
             });
-      })
+});
