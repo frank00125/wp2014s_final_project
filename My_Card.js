@@ -22,4 +22,4 @@ $(document).ready(function(){
 $('#logout').click(function(){
 	Parse.User.logOut();
 	window.location.assign("LoginPage.html");
-}
+});
