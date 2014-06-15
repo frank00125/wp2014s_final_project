@@ -1,6 +1,6 @@
-/*(function(){
+(function(){
       Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ",
-            "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");*/
+            "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
 
 
@@ -13,6 +13,9 @@
     // for FB.getLoginStatus().
           if (response.status === 'connected') {
       // Logged into your app and Facebook.
+            FB.api('/me', function(response) {
+            
+    });
             window.location.assign("My_Card.html");
          } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -131,4 +134,4 @@ function disconnectUser(access_token) {
 // Could trigger the disconnect on a button click
 $('#revokeButton').click(disconnectUser);
 
-//}
+})();
