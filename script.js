@@ -10,7 +10,9 @@ window.fbAsyncInit = function() {
   });
 
 $('div.fb-login-button').click(function() {
-  function statusChangeCallback(response) {
+  
+});
+function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
 
@@ -113,7 +115,6 @@ $('div.fb-login-button').click(function() {
         'Thanks for logging in, ' + response.name + '!';
     });
   }
-});
 
   
   function signinCallback(authResult) {
