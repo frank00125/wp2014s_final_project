@@ -33,7 +33,7 @@ div.loginArea{
 	background-repeat: no-repeat;
 }
 
-form.localLogin{
+form#localLogin{
 
 	position: absolute;
 	left: 200px;
@@ -48,7 +48,7 @@ position:abolute;
 	height: 75px;
 	}
 
-form.localLogin input[type="submit"]{
+form#localLogin input[type="submit"]{
 	position:relative;
 	margin-left: 115px;
 	width: 100px;
@@ -78,7 +78,7 @@ font-family: "Microsoft JhengHei";
 font-size:25px;
 }
 
-form.localLogin .font{
+form#localLogin .font{
 
 	font-family: "Microsoft JhengHei";
 font-size:15px;
