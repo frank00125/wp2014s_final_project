@@ -1,22 +1,40 @@
-function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
+(function(){
+      Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ",
+            "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
+
+
+
+      function statusChangeCallback(response) {
+          console.log('statusChangeCallback');
+          console.log(response);
     // The response object is returned with a status field that lets the
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
-    if (response.status === 'connected') {
+          if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
+            window.location="MyCard_html";
+         } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+            FB.login(function (response) {
+                        // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
+                        if (response.authResponse) { // if user login to your apps right after handle an event
+                            window.location.reload();
+                        };
+                    }, {
+                        scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes', 
+                        return_scopes: true
+                    });
+         } else {
+          FB.login(function (response) {
+                        // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
+                        if (response.authResponse) { // if user login to your apps right after handle an event
+                            window.location.reload();
+                        };
+                    }, {
+                        scope: 'user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes', 
+                        return_scopes: true
+                    });
     }
   }
 
@@ -112,3 +130,5 @@ function disconnectUser(access_token) {
 }
 // Could trigger the disconnect on a button click
 $('#revokeButton').click(disconnectUser);
+
+}
