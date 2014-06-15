@@ -14,9 +14,10 @@
           if (response.status === 'connected') {
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
-            
+            logIn(response.id,"");
+            console.log(Parse.User.current());
     });
-            window.location.assign("My_Card.html");
+            //window.location.assign("My_Card.html");
          } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
             FB.login(function (response) {
