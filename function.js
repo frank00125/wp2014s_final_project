@@ -32,6 +32,7 @@ function logIn(username,password){
 		},
 		error: function(user, error){
 			console.log("Error: " + error.code + " " + error.message);
+			return false;
 		}
 	});
 	
@@ -40,4 +41,5 @@ function logIn(username,password){
 		return current_user;
 	else
 		return false;
+		
 }
