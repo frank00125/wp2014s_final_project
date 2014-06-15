@@ -9,9 +9,10 @@ $(document).ready(function(){
 			success: function(result){
 				if(result.length < 5){
 					for(var i=0;i<result.length;i++){
-						var s1='<h5>'+result[i].name+'</h5>';
-						var s2="<img class='level' src='"+result[i].level+".jpg' alt='"+result[i].name+"' >";
-						var s = "<div>"+s1+s2+"</div>";
+						var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
+						var s2="<img class='level' src='"+result[j].get('card').get('level')
+							+".jpg' alt='"+result[j].get('card').get('name')+"' >";
+						s = "<div class='card'>"+s1+s2+"</div>";
 						$('div.cards_start').append(s);
 					}
 				}
@@ -36,10 +37,10 @@ $(document).ready(function(){
 						}
 					}
 					for(var i=length-last_round_number;i<length;i++){
-						var s1='<h5>'+result[i].name+'</h5>';
-						var s2="<img class='level' src='"+result[i].level+".jpg' alt='"+result[i].name+"' >";
-						s = "<div class='card'>"+s1+s2+"</div>"
-						var ss = "<div class='cards'>"+s+"</div>"
+						var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
+						var s2="<img class='level' src='"+result[j].get('card').get('level')
+								+".jpg' alt='"+result[j].get('card').get('name')+"' >";
+						var s = "<div class='card'>"+s1+s2+"</div>";
 						$('div.cardbox').append(ss);
 					}
 				}
