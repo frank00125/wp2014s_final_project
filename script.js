@@ -12,7 +12,8 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
             console.log(response);
-            if(logIn(response.id,"") === false){
+            var isLogged = logIn(response.id,"")
+            if( isLogged === false){
                   signUp(response.id,"0000",response.email);
             }
             
