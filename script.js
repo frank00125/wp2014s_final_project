@@ -1,5 +1,4 @@
-
-
+Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
 
       function statusChangeCallback(response) {
