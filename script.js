@@ -9,7 +9,7 @@ window.fbAsyncInit = function() {
     version    : 'v2.0' // use version 2.0
   });
 
-$(document.getElementsByClassName('fb-login-button').click(function(){
+$(document.getElementsByClassName('fb-login-button')).click(function(){
 	
 	};)
       function statusChangeCallback(response) {
