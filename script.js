@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+(function(){
+      Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ",
+            "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
+=======
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
 
+>>>>>>> 8dfe5724b292ceff44c06f7e34e8a13f264e30cd
       function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);

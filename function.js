@@ -9,7 +9,7 @@ function signUp(username,password,email){
 	user.set('username',username);
 	user.set('password',password);
 	user.set('email',email);
-	user.set('score',score);
+	user.set('score',0);
 	
 	user.signUp(null, {
 		success: function(user) {
@@ -34,4 +34,10 @@ function logIn(username,password){
 			console.log("Error: " + error.code + " " + error.message);
 		}
 	});
+	
+	var current_user = Parse.User.current();
+	if(current_user)
+		return current_user;
+	else
+		return false;
 }
