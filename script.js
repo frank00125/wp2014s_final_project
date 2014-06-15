@@ -9,11 +9,10 @@ window.fbAsyncInit = function() {
     version    : 'v2.0' // use version 2.0
   });
   
-  function statusChangeCallback(response) {
-          console.log('statusChangeCallback');
-          console.log(response);
 
-          if (response.status === 'connected') {
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
             console.log(response);
@@ -65,12 +64,6 @@ window.fbAsyncInit = function() {
                         return_scopes: true
                     });
     }
-  }
-
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
     });
   }
 
