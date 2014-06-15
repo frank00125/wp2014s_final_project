@@ -8,11 +8,8 @@ window.fbAsyncInit = function() {
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.0' // use version 2.0
   });
-
-$('div.fb-login-button').click(function() {
   
-});
-function statusChangeCallback(response) {
+  function statusChangeCallback(response) {
           console.log('statusChangeCallback');
           console.log(response);
 
@@ -115,6 +112,11 @@ function statusChangeCallback(response) {
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+
+$('div.fb-login-button').click(function() {
+  
+});
+
 
   
   function signinCallback(authResult) {
