@@ -82,10 +82,10 @@ window.fbAsyncInit = function() {
   }(document, 'script', 'facebook-jssdk'));
 
 
-$('div.fb-login-button').click(function() {
+/*$('div.fb-login-button').click(function() {
   checkLoginState();
   window.location.assign("LoginPage.html");
-});
+});*/
 
 
   
