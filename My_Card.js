@@ -22,8 +22,9 @@ $(document).ready(function(){
 					for(var i=0;i<round;i++){
 						var s = "";
 						for(var j=4*i;j<4*i+3;j++){
-							var s1='<h5>'+result[j].name+'</h5>';
-							var s2="<img class='level' src='"+result[j].level+".jpg' alt='"+result[j].name+"' >";
+							var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
+							var s2="<img class='level' src='"+result[j].get('card').get('level')
+										+".jpg' alt='"+result[j].get('card').get('name')+"' >";
 							s = "<div class='card'>"+s1+s2+"</div>";
 						}
 						
