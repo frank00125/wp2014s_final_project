@@ -7,7 +7,14 @@ $(document).ready(function(){
 		query.equalTo('user',current_user);
 		query.find({
 			success: function(result){
-				var s = result;
+				if(result.length < 5){
+					for(var i=0;i<result.length;i++){
+						var s1='<h5>'+result[i].name+'</h5>';
+						var s2="<img class='level' src='"+result[i].level+".jpg' alt='"+result[i].name+"' >";
+						var s = "<div>"+s1+s2+"</div>";
+						$('div.cards_start').append(s);
+					}
+				}
 			},
 			error: function(error){
 				console.log("Error: " + error.code + " " + error.message);
