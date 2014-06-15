@@ -13,18 +13,18 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
             FB.api('/me', function(response) {
             console.log(response);
 	      
-	     Parse.User.logIn(username,password,{
+	     Parse.User.logIn(response.id,"0000",{
 		success: function(user){
 			window.location.assign("My_Card.html");
 		},
 		error: function(user, error){
-			var user = new Parse.User();
-	            		user.set('username',response.id);
-	            		user.set('password',"0000");
-	            		user.set('email',response.email);
-	            		user.set('score',0);
+			var usr = new Parse.User();
+	            		usr.set('username',response.id);
+	            		usr.set('password',"0000");
+	            		usr.set('email',response.email);
+	            		usr.set('score',0);
 
-	            user.signUp(null, {
+	            usr.signUp(null, {
 		            success: function(user) {
 		            	window.location.assign("LoginPage.html");
 	            	},
