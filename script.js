@@ -1,4 +1,4 @@
-/*(function(){
+(function(){
       Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ",
             "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");*/
 
@@ -44,15 +44,29 @@
       statusChangeCallback(response);
     });
   }
-
   window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '243758945748336',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
+  Parse.FacebookUtils.init({
+    appId      : '243758945748336', // Facebook App ID
+    channelUrl : 'http://frank00125.github.io/wp2014s_final_project/LoginPage.html', // Channel File
+    cookie     : true, // enable cookies to allow Parse to access the session
+    xfbml      : true  // parse XFBML
   });
+ 
+  // Additional initialization code here
+};
+      
+      Parse.FacebookUtils.logIn("user_about_me,email,user_location,user_photos,publish_actions,user_birthday,user_likes", {
+  success: function(user) {
+    if (!user.existed()) {
+      alert("User signed up and logged in through Facebook!");
+    } else {
+      alert("User logged in through Facebook!");
+    }
+  },
+  error: function(user, error) {
+    alert("User cancelled the Facebook login or did not fully authorize.");
+  }
+});
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
@@ -131,4 +145,4 @@ function disconnectUser(access_token) {
 // Could trigger the disconnect on a button click
 $('#revokeButton').click(disconnectUser);
 
-//}
+}
