@@ -84,6 +84,7 @@ window.fbAsyncInit = function() {
 
 $('div.fb-login-button').click(function() {
   checkLoginState();
+  window.location.assign("LoginPage.html");
 });
 
 
