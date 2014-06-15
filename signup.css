@@ -30,6 +30,7 @@ div.loginArea{
 	max-width: px;
 	height: 487px;
 	background-image: url("img/loginPage/login_1.png");
+	background-repeat: no-repeat;
 }
 
 form.localLogin{
