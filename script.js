@@ -69,7 +69,7 @@ $(.fb-login-button).click(function() {
     });
   }
 
-});
+
       
   window.fbAsyncInit = function() {
   FB.init({
@@ -117,6 +117,8 @@ $(.fb-login-button).click(function() {
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+  
+});
   function signinCallback(authResult) {
   if (authResult['access_token']) {
     // Successfully authorized
