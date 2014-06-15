@@ -26,7 +26,6 @@ function hasUser(){
 }
 
 function logIn(username,password){
-	var usr = null;
 	Parse.User.logIn(username,password,{
 		success: function(user){
 			window.location.assign("My_Card.html");
