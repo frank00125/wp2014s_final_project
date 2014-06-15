@@ -22,12 +22,14 @@ $(document).ready(function(){
 		});
 	}
 	else{
-		alert("½Ðµn¤J");
+		alert("ï¿½Ðµnï¿½J");
 	}
 });
 
 $('#logout').click(function(){
 	Parse.User.logOut();
 	window.location.assign("LoginPage.html");
-	FB.logout(function(response){});
+	FB.logout(function(response){
+		window.location.assign("LoginPage.html");
+	});
 });
