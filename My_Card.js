@@ -16,6 +16,10 @@ $(document).ready(function(){
 	}
 	else{
 		alert("½Ðµn¤J");
-		window.location.assign("LoginPage.html"); 
 	}
 });
+
+$('#logout').click(function(){
+	Parse.User.logOut();
+	window.location.assign("LoginPage.html");
+}
