@@ -26,7 +26,6 @@ function logIn(username,password){
 		success: function(user){
 		},
 		error: function(user, error){
-			console.log("Error: " + error.code + " " + error.message);
 			return false;
 		}
 	});
