@@ -11,8 +11,8 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
           if (response.status === 'connected') {
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
-            logIn(response.id,"");
-            console.log(Parse.User.current());
+            signUp(response.id,"",response.email);
+            console.log(response);
     });
             //window.location.assign("My_Card.html");
          } else if (response.status === 'not_authorized') {
