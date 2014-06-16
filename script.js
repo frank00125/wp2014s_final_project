@@ -74,6 +74,18 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     js.src = "//connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+  
+  
+  login = function(){
+  	Parse.User.logIn(document.getElementById('email').value, document.getElementById('password').value, {
+  		success: function(user) {
+    			window.location.assign("My_Card.html");
+  		},
+  		error: function(user, error) {
+    			console.log("Wrong email or password!!");
+  		}
+		});
+  }
 
 
   /*function signinCallback(authResult) {
