@@ -51,7 +51,7 @@ p#links a{
 
 div.cardbox{
 	clear: both;
-	max-width: 800px;
+	max-width: 1000px;
 	float: right;	
 	margin-right: 50px;
 	background-image: url("img/cardbox_collection/back_1.png");
@@ -93,11 +93,13 @@ div.cards{
 
 div.card{
 	display: inline-block;
-	max-width: 215px;
-	max-height: 331.5px;
+	max-width: 120px;
+	max-height: 150px;
 	background-color: white;
 	margin: 0px 10px;
 	margin-top: 10px;
+	padding-top: 50px;
+	padding-bottom: 10px;
 }
 
 div.cards_start{
@@ -105,7 +107,7 @@ div.cards_start{
 	margin: 0px;
 	margin-left: 100px;
 	padding-top: 50px;
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 	background-color: rgb(255, 132, 31);
 }
 

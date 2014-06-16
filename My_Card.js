@@ -2,59 +2,47 @@ $(document).ready(function(){
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
 	if(current_user){
-		var ownCard = Parse.Object.extend("ownCard");
+		var ownCard = Parse.Object.extend('ownCard');
 		var query = new Parse.Query(ownCard);
+		query.include('card');
 		query.equalTo('user',current_user);
 		query.find({
-			success: function(result){
-				if(result.length < 5){
-					for(var i=0;i<result.length;i++){
-						var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
-						var s2="<img class='level' src='"+result[j].get('card').get('level')
-							+".jpg' alt='"+result[j].get('card').get('name')+"' >";
-						s = "<div class='card'>"+s1+s2+"</div>";
+			success: function(data) {
+				var s1 = "";
+				for(var i=0;i <data.length;i++){
+					var card = data[i].get('card');
+					var s = getElementString(card.get('name'),card.get('level'));
+					if(i < 4)
 						$('div.cards_start').append(s);
-					}
-				}
-				else{
-					var length = result.length;
-					var round = parseInt(length / 4);
-					var last_round_number = length % 4;
-					for(var i=0;i<round;i++){
-						var s = "";
-						for(var j=4*i;j<4*i+3;j++){
-							var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
-							var s2="<img class='level' src='"+result[j].get('card').get('level')
-										+".jpg' alt='"+result[j].get('card').get('name')+"' >";
-							s = "<div class='card'>"+s1+s2+"</div>";
+					else{
+						s1 += s;
+						if((i + 1) % 4 == 0){
+							var string = "<div class='cards'>"+s1+"</div>";
+							$('div.cardbox').append(string);
+							s1 = "";
 						}
-						
-						if(i==0)
-							$('div.cards_start').append(s);
-						else{
-							var ss = "<div class='cards'>"+s+"</div>"
-							$('div.cardbox').append(ss);
+						if(i == data.length - 1){
+							var string = "<div class='cards'>"+s1+"</div>";
+							$('div.cardbox').append(string);
+							s1 = "";
 						}
 					}
-					for(var i=length-last_round_number;i<length;i++){
-						var s1='<h5>'+result[j].get('card').get('name')+'</h5>';
-						var s2="<img class='level' src='"+result[j].get('card').get('level')
-								+".jpg' alt='"+result[j].get('card').get('name')+"' >";
-						var s = "<div class='card'>"+s1+s2+"</div>";
-						$('div.cardbox').append(ss);
-					}
 				}
-			},
-			error: function(error){
-				console.log("Error: " + error.code + " " + error.message);
 			}
 		});
 	}
 	else{
-		alert("�еn�J");
+		alert("請登入");
 	}
 });
 
+function getElementString(name, level){
+	var s1 = "<h5>"+name+"</h5>";
+	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
+	var s = "<div class='card'>"+s1+s2+"</div>";
+	
+	return s;
+}
 
 $('#logout').click(function(){
 	
