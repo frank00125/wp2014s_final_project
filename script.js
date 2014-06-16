@@ -8,62 +8,62 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.0' // use version 2.0
   });
-fbLogin(function()) {  
-  FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-            FB.api('/me', function(response) {
-            console.log(response);
+  function fbLogin() {  
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        // Logged into your app and Facebook.
+              FB.api('/me', function(response) {
+              console.log(response);
 	      
-	     Parse.User.logIn(response.id,"0000",{
-		success: function(user){
-			window.location.assign("My_Card.html");
-		},
-		error: function(user, error){
-			var usr = new Parse.User();
-	            		usr.set('username',response.id);
-	            		usr.set('password',"0000");
-	            		usr.set('email',response.email);
-	            		usr.set('score',0);
+	       Parse.User.logIn(response.id,"0000",{
+	    	  success: function(user){
+		 	  window.location.assign("My_Card.html");
+		  },
+		  error: function(user, error){
+			  var usr = new Parse.User();
+	            		  usr.set('username',response.id);
+	            		  usr.set('password',"0000");
+	            		  usr.set('email',response.email);
+	            		  usr.set('score',0);
 
-	            usr.signUp(null, {
-		            success: function(user) {
-		            	window.location.assign("LoginPage.html");
-	            	},
-		            error: function(user, error) {
-			            console.log("Error: " + error.code + " " + error.message);
-		            }
-	            });
-		}
-	});
+	              usr.signUp(null, {
+		              success: function(user) {
+		            	  window.location.assign("LoginPage.html");
+	            	  },
+		              error: function(user, error) {
+			              console.log("Error: " + error.code + " " + error.message);
+		              }
+	              });
+		  }
+	  });
 
             
-    });
+      });
             //window.location.assign("My_Card.html");
-         } else if (response.status === 'not_authorized') {
+           } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
+              FB.login(function (response) {
+                        // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
+                          if (response.authResponse) { // if user login to your apps right after handle an event
+                              window.location.reload();
+                          };
+                      }, {
+                          scope: 'publish_actions', 
+                          return_scopes: true
+                      });
+           } else {
             FB.login(function (response) {
                         // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
-                        if (response.authResponse) { // if user login to your apps right after handle an event
-                            window.location.reload();
-                        };
-                    }, {
-                        scope: 'publish_actions', 
-                        return_scopes: true
-                    });
-         } else {
-          FB.login(function (response) {
-                        // FB.api('/me/feed', 'post', {message: 'I\'m started using FB API'});
-                        if (response.authResponse) { // if user login to your apps right after handle an event
-                            window.location.reload();
-                        };
-                    }, {
-                        scope: 'publish_actions',  
-                        return_scopes: true
-                    });
-    }
-  });
-  };
+                          if (response.authResponse) { // if user login to your apps right after handle an event
+                              window.location.reload();
+                          };
+                      }, {
+                          scope: 'publish_actions',  
+                          return_scopes: true
+                      });
+      }
+    });
+    };
   };
 
   // Load the SDK asynchronously
