@@ -8,7 +8,7 @@ $('#submit').click(function(){
             user.signUp(null, {
                 success: function(user){
                   alert('success!!')
-                  window.location.assign("LoginPage.html");
+                  //window.location.assign("LoginPage.html");
                 },
                 error: function(user, error){
                   alert('fail');
