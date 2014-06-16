@@ -2,30 +2,39 @@ $(document).ready(function(){
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
 	if(current_user){
+		var BattleCard = Parse.Object.extend('BattleCard');
+		var query1 = new Parse.Query(BattleCard);
+		query1.include('card');
+		query1.equalTo('user',current_user);
+		query1.find({
+			success: function(data) {
+				for(var i=0;i <data.length;i++){
+					var card = data[i].get('card');
+					var s = getElementString(card.get('name'),card.get('level'));
+					$('div.BattleCard').append(s);
+				}
+			}
+		});
 		var ownCard = Parse.Object.extend('ownCard');
-		var query = new Parse.Query(ownCard);
-		query.include('card');
-		query.equalTo('user',current_user);
-		query.find({
+		var query2 = new Parse.Query(ownCard);
+		query2.include('card');
+		query2.equalTo('user',current_user);
+		query2.find({
 			success: function(data) {
 				var s1 = "";
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
 					var s = getElementString(card.get('name'),card.get('level'));
-					if(i < 4)
-						$('div.cards_start').append(s);
-					else{
-						s1 += s;
-						if((i + 1) % 4 == 0){
-							var string = "<div class='cards'>"+s1+"</div>";
-							$('div.cardbox').append(string);
-							s1 = "";
-						}
-						if(i == data.length - 1){
-							var string = "<div class='cards'>"+s1+"</div>";
-							$('div.cardbox').append(string);
-							s1 = "";
-						}
+					s1 += s;
+					if((i + 1) % 5 == 0){
+						var string = "<div class='cards'>"+s1+"</div>";
+						$('div.cardbox').append(string);
+						s1 = "";
+					}
+					else if(i == data.length - 1){
+						var string = "<div class='cards'>"+s1+"</div>";
+						$('div.cardbox').append(string);
+						s1 = "";
 					}
 				}
 			}

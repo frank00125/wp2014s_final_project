@@ -91,6 +91,16 @@ div.cards{
 	padding-left: 100px;
 }
 
+
+div.BattleCard{
+	width: 800px;
+	height: 150px;
+	padding-right:100px;
+	background-color: rgb(255, 132, 31);
+	margin: 0px;
+	padding-left: 100px;
+}
+
 div.card{
 	display: inline-block;
 	max-width: 120px;
