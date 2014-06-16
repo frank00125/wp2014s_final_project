@@ -7,6 +7,7 @@ $('#submit').click(function(){
             user.set("password", document.getElementById('password').value);
             user.signUp(null, {
                 success: function(user){
+                  alert('success!!')
                   window.location.assign("LoginPage.html");
                 },
                 error: function(user, error){
