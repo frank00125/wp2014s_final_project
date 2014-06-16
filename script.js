@@ -8,7 +8,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.0' // use version 2.0
   });
-  function fbLogin() {  
+  var fbLogin = function() {  
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
         // Logged into your app and Facebook.
