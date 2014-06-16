@@ -75,17 +75,8 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
-  }
-  function signinCallback(authResult) {
+
+  /*function signinCallback(authResult) {
   if (authResult['access_token']) {
     // Successfully authorized
     // Hide the sign-in button now that the user is authorized, for example:
@@ -124,4 +115,4 @@ function disconnectUser(access_token) {
 }
 // Could trigger the disconnect on a button click
 $('#revokeButton').click(disconnectUser);
-
+*/
