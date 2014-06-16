@@ -8,7 +8,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
             user.signUp(null, {
                 success: function(user){
                   alert('success!!')
-                  //window.location.assign("LoginPage.html");
+                  window.location.assign("LoginPage.html");
                 },
                 error: function(user, error){
                   alert('fail');
