@@ -1,9 +1,16 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '243758945748336',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
 
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
       // Logged into your app and Facebook.
             FB.api('/me', function(response) {
             console.log(response);
@@ -55,20 +62,6 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
                         return_scopes: true
                     });
     }
-    });
-  }
-
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '243758945748336',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
   });
 
   };
