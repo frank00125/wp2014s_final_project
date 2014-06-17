@@ -6,6 +6,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
             user.set("username", document.getElementById('email').value);
             user.set("password", document.getElementById('password').value);
             user.set("canBattle",null);
+            user.set("win",0);
             user.signUp(null, {
                 success: function(user){
                   alert('success!!')
