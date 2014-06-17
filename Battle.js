@@ -8,7 +8,7 @@ $(document).ready(function(){
 			success: function(data){
 				var member_number = data.length;
 				//var random = member_number * rand();
-				var usr = data[random];
+				//var usr = data[random];
 				var s = 1;
 			}
 		});
