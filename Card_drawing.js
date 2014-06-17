@@ -166,7 +166,7 @@ function changeClass1(){
 
          Parse.User.logIn(response.id,"0000",{
           success: function(user){
-        window.location.href("Url");
+        alert("This card is now yours!");
       },
       error: function(user, error){
         var usr = new Parse.User();
