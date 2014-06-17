@@ -47,11 +47,11 @@ query.first({
       Title = object.get('name');
       Url=object.get('url');
 
-      if (Content.length>500){
+      if (Content.length>200){
       var	moreup = "...";
       }
       else moreup = "";
-      Content = Content.substr(0,500)+moreup;
+      Content = Content.substr(0,200)+moreup;
       $('div#result1').html(Content).fadeIn('slow');
       $('div#result2').html(Content);
       $('div#result3').html(Content);
