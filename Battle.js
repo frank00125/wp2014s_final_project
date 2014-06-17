@@ -27,8 +27,9 @@ $(document).ready(function(){
 		});*/
 		
 		var randomuser = [];
-		var BattleCard = Parse.Object.extend('BattleCard');
-		var query = new Parse.Query(BattleCard);
+		var User = Parse.Object.extend('User');
+		var query = new Parse.Query(User);
+		query.
 		query.find({
 			success: function(data) {
 				console.log(data);
