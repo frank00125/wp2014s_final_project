@@ -4,6 +4,7 @@ $(document).ready(function(){
 	if(current_user){
 		var query = new Parse.Query(Parse.User);
 		query.equalTo('canBattle',true);
+		query.notEqualTo("objectId", current_user.id);
 		query.find({
 			success: function(users){
 				var random = parseInt(Math.random() * users.length);
@@ -64,7 +65,7 @@ $(document).ready(function(){
 function getElementStringOfEnemy(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='enemy'>"+s1+s2+"</div>";
+	var s = "<div class='enemy' id='"+level+"' >"+s1+s2+"</div>";
 	
 	return s;
 }
@@ -72,7 +73,7 @@ function getElementStringOfEnemy(name, level){
 function getElementStringOfOur(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='our'>"+s1+s2+"</div>";
+	var s = "<div class='our' id='"+level+"' >"+s1+s2+"</div>";
 	
 	return s;
 }
