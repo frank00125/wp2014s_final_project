@@ -25,7 +25,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 			var query = new Parse.Query(Findcard);
 			var cardid = localStorage.getItem("cardid");
 			query.equalTo("objectId", cardid);
-			query.find({
+			query.first({
   				success: function(results) {
     					var Owncard = Parse.Object.extend("ownCard");
 					var owncard = new Owncard();
