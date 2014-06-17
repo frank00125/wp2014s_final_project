@@ -109,10 +109,12 @@ z-index: -10;
 
 .fb-share-button{
 	left:50px;
+	top:-10;
 	margin-right: 20px;
 }
 
 #loginbtn{
+	left:100px;
 	margin-right:20px;
 	width:10%;
 	height:10%;
