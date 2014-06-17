@@ -147,28 +147,6 @@ function changeClass1(){
 			getData();
 		}
 		
-		function ramdomNum(){
- 
-			var vmaxNum = 3;  
-			var vminNum = 0;  
-			var n = Math.floor(Math.random() * (vmaxNum - vminNum + 1)) + vminNum;
-			var vac;
-
- 			switch(n) {
-    				case 0:
-        				vac = 'a';
-        				break;
-    				case 1:
-        				vac = 'b';
-        				break;
-    				case 2:
-    					vac = 'c';
-    					break;
-    				case 3:
-    					vac = 'd';
-    					break;
-				}
-			}
 		
 function storecard(){
 	if(typeof(Storage) !== "undefined") {
