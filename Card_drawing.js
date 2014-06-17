@@ -146,3 +146,13 @@ function changeClass1(){
 			
 			getData();
 		}
+function storecard(){
+	if(typeof(Storage) !== "undefined") {
+		localStorage.setItem("cardname", Title);
+		localStorage.setItem("content", Content);
+		localStorage.setItem("url", Url);
+	} else {
+		alert("can't store to localstorage!");
+}
+}
+
