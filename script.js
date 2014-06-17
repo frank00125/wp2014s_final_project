@@ -108,7 +108,31 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
   login = function(){
   	Parse.User.logIn(document.getElementById('email').value, document.getElementById('password').value, {
   		success: function(user) {
-    			window.location.assign("My_Card.html");
+    			var Findcard = Parse.Object.extend("card");
+			var query = new Parse.Query(Findcard);
+			var cardid = localStorage.getItem("cardid");
+			query.equalTo("objectId", cardid);
+			query.first({
+  				success: function(results) {
+    					var Owncard = Parse.Object.extend("ownCard");
+					var owncard = new Owncard();
+					
+					owncard.set("card", results);
+					owncard.set("user", user);
+					owncard.save(null, {
+  						success: function(owncard) {
+  							localStorage.removeItem("cardid");
+    							window.location.assign("rule.html");
+  						},
+  						error: function(owncard, error) {
+    							console.log("error!");
+  						}
+					});
+  				},
+  				error: function(error) {
+    					alert("Error: " + error.code + " " + error.message);
+  				}
+			});
   		},
   		error: function(user, error) {
     			console.log("Wrong email or password!!");
