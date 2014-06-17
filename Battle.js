@@ -7,7 +7,7 @@ $(document).ready(function(){
 		query.find({
 			success: function(data){
 				var member_number = data.length;
-				var random = member_number * rand();
+				//var random = member_number * rand();
 				var usr = data[random];
 				var s = 1;
 			}
