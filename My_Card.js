@@ -44,19 +44,101 @@ $(document).ready(function(){
 				}
 			}
 		});
-
+		var originArr = [];
 		$('#changeBattleCard').click(function(){
 			if(isClickBattle==false){
 				$('.checkbox').css('display','inline-block');
 				var x = $('.flow');
 				for(var i = 0;i<x.length;i++){
 					var id = x[i].id;
-					$("")
+					$('.checkbox[value='+id+']').prop('checked',true);
+					originArr.push(id);
+				}
 				isClickBattle = true;
 			}
 			else{
-				$('.checkbox').css('display','none');
-				isClickBattle = false;
+				var x = $('.flow');
+				var arr = [];
+				var count = 0;
+				$('.checkbox').each(function(){
+					if($(this).prop('checked')==true){
+						var value = this.value;
+						arr.push(value);
+						count++;
+					}
+				});
+				
+				if(count != 5){
+					if(count > 5)
+						alert('點選超過五個，請重新點選');
+					else
+						alert('點選少於五個，請重新點選');
+					for(var i = 0;i<x.length;i++){
+						var id = x[i].id;
+						$('.checkbox[value='+id+']').prop('checked',true);
+					}
+				}
+				else{
+					var arr = [];
+					$('.checkbox').each(function(){
+						if($(this).prop('checked')==true){
+							arr.push(this.value);
+						}
+					});
+					$('.checkbox').each(function(){
+						if($(this).prop('checked')==true){
+							var value = this.value;
+							var card = Parse.Object.extend('card');
+							var innerQuery = new Parse.Query(card);
+							innerQuery.equalTo('objectId',value);
+							innerQuery.first({
+								success: function(data){
+									var BC = Parse.Object.extend('BattleCard');
+									var query = new Parse.Query(BC);
+									query.equalTo('user',Parse.User.current());
+									query.ascending('flow');
+									query.find({
+										success: function(result){
+											var id = data.id;
+											var array = new Array();
+											for(var i=0;i<result.length;i++){
+												array.push(result[i].get('card').id);
+											}
+											var bool = [false,false,false,false,false];
+											var a = arr;
+											for(var i=0;i<5;i++){
+												var no = array.indexOf(arr[i]);
+												if(no != -1)
+													bool[no] = true;
+											}
+											if(bool[0] == false)
+												updateCard(arr[0],result[0]);
+											if(bool[1] == false)
+												updateCard(arr[1],result[1]);
+											if(bool[2] == false)
+												updateCard(arr[2],result[2]);
+											if(bool[3] == false)
+												updateCard(arr[3],result[3]);
+											if(bool[4] == false)
+												updateCard(arr[4],result[4]);
+										}
+									});
+								}
+							});
+						}
+					});
+					changeBattleCardHTML();
+					$('.checkbox').each(function(){
+					 var value = $(this).val();
+						if(arr.indexOf() != -1)
+							$(this).prop('checked',true);
+						else
+							$(this).prop('checked',false);
+						$(this).css('display','none');
+					});
+					
+					isClickBattle = false;
+				}
 			}
 		});
 		
@@ -97,6 +179,25 @@ $(document).ready(function(){
 		alert("請登入");
 	} 
 });
+
+function updateCard(id, bcard){
+	var card = Parse.Object.extend('card');
+	var query = new Parse.Query(card);
+	query.equalTo('objectId',id);
+	query.first({
+		success: function (data){
+			var BC = Parse.Object.extend('BattleCard');
+			var bc = new BC();
+			bc.set('objectId',bcard.id);
+			bc.save(null, {
+				success: function(bc){
+					bc.set('card',data);
+					bc.save();
+				}
+			});
+		}
+	});
+}
 
 function getElementStringByownCard(name, level, id){
 	var s0 = "<input class='checkbox' type='checkbox' value='"+id+"'>"
@@ -149,6 +250,28 @@ function saveObj(x, data){
 			}
 		});
 	}
+}
+	
+function changeBattleCardHTML(){
+	var BC = Parse.Object.extend('BattleCard');
+	var query = new Parse.Query(BC);
+	query.equalTo('user',Parse.User.current());
+	query.include('card');
+	query.ascending('flow');
+	query.find({
+		success: function (data){
+			$('div.BattleCard').html("");
+			for(var i = 0;i<data.length;i++){
+				var card = data[i].get('card');
+				var s = getElementStringByBattleCard(card.get('name'),card.get('level')
+							,card.id,data[i].get('flow'));
+				$('div.BattleCard').append(s);
+			}
+		},
+		error: function (error){
+			console.log(error);
+		}
+	});
 }
 
 $('#logout').click(function(){
