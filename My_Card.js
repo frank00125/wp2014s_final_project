@@ -15,7 +15,7 @@ $(document).ready(function(){
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
 					var s = getElementStringByBattleCard(card.get('name'),card.get('level')
-								,card.get('no'),data[i].get('flow'));
+								,card.id,data[i].get('flow'));
 					$('div.BattleCard').append(s);
 				}
 			}
@@ -44,8 +44,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-		
-		var isChangeFlow = false;
+
 		$('#changeBattleCard').click(function(){
 			if(isClickBattle==false){
 				$('.checkbox').css('display','inline-block');
@@ -64,36 +63,31 @@ $(document).ready(function(){
 			}
 			else{
 				var x = $('.flow');
-				var arr = new Array("","","","","");
-				var isDuplicated = false
+				var isDuplicated = false;
+				var arrFlow = new Array("","","","","");
 				for(var i=0;i<x.length;i++){
 					if(x[i].value > 5){
 						isDuplicated = true;
 						break;
 					}
-					arr[x[i].value - 1] = x[i].id;
+					arrFlow[x[i].value - 1] = x[i].id;
 				}
-				for(var i=0;i<arr.length;i++){
-					if(arr[i]==""){
+				for(var i=0;i<arrFlow.length;i++){
+					if(arrFlow[i]==""){
 						isDuplicated = true;
 						break;
 					}
 				}
 				if(isDuplicated==true){
-					for(var i=0;i<5;i++){
+					for(var i=0;i<5;i++)
 						x[i].value = i + 1;
-					}
-					isChangeFlow = false;
 				}
-				else
-					isChangeFlow = true;
 				x.prop('disabled',true);
+				if(!isDuplicated)
+					changeAndSaveBattleCard(arrFlow);
 				isClickFlow = false;
 			}
 		});
-		
-		if(isChangeFlow==true){
-			
 	}
 	else{
 		alert("請登入");
@@ -109,13 +103,48 @@ function getElementStringByownCard(name, level, no){
 	return s;
 }
 
-function getElementStringByBattleCard(name, level, no, number){
-	var s0 = "<input type='text' id='"+no+"' class='flow' value='"+number+"' disabled>";
+function getElementStringByBattleCard(name, level, id, number){
+	var s0 = "<input type='text' id='"+id+"' class='flow' value='"+number+"' disabled>";
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
 	var s = "<div class='card'>"+s0+s1+s2+"</div>";
 	
 	return s;
+}
+
+function changeAndSaveBattleCard(array){
+	var card = Parse.Object.extend('card');
+	var BattleCard = Parse.Object.extend('BattleCard');
+	var query = new Parse.Query(BattleCard);
+	query.equalTo('user',Parse.User.current());
+	query.ascending('flow');
+	query.find({
+		success: function(data){
+			var x = $('.flow');
+			for(var i=0;i<data.length;i++)
+				saveObj(x[i],data[i]);
+		},
+		error: function(error){
+		}
+	});
+}
+
+function saveObj(x, data){
+	var s = 1;
+	var value = parseInt(x.value);
+	if(value != data.get('flow')){
+		var BC = Parse.Object.extend('BattleCard');
+		var bc = new BC();
+		bc.set('user',data.get('user'));
+		bc.set('card',data.get('card'));
+		bc.set('objectId',data.id);
+		bc.save(null,{
+			success: function(bc){
+				bc.set('flow',value);
+				bc.save();
+			}
+		});
+	}
 }
 
 $('#logout').click(function(){
