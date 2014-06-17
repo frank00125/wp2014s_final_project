@@ -33,6 +33,11 @@ img#logo{
 	width: auto;
 }
 
+img{
+width:100;
+height:150;
+}
+
 p#links{
 	display: inline-block;
 	float: right;
@@ -50,6 +55,173 @@ p#links a{
 }
 
 div.enemy_card, p.vs, div.our_card{
-	display: block;
+	position: absolute;
 	color: white;
+
+}
+.vs {
+	display: inline-block;
+	position:absolute;
+	top: 62%;
+	left:45%;
+
+}
+
+
+.enemy_card{
+	width:1000px;
+	height:400px;
+	display: inline;
+	
+	top: 30%;
+	left:10%;
+}
+
+.our_card{
+	display: inline-block;
+	position: absolute;
+	top: 68%;
+	width:100%;
+	left:10%;
+}
+
+.enemy{
+
+	display:relative;
+	display: inline;
+	margin-left: 66px;
+}
+
+.our{
+	display:relative;
+	display: inline;
+	margin-left: 66px;
+
+}
+
+
+.myButton {
+	position :absolute;
+left:1000px;
+top:60%;
+	background-color:#6e3a37;
+	-moz-border-radius:23px;
+	-webkit-border-radius:23px;
+	border-radius:23px;
+	border:3px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:18px;
+	font-weight:bold;
+	padding:19px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #853630;
+}
+.myButton:hover {
+	left:1000px;
+	top:60%;
+	background-color:#eb675e;
+}
+.myButton:active {
+	left:1000px;
+	
+	position:absolute;
+	top:61%;
+}
+
+.block {
+	position: absolute;
+	
+	width: 100px;
+	height: 150px;
+	
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 1.5s;
+}
+
+.rotated,.mover .block:hover{
+		-webkit-transform: rotateY(180deg);
+
+
+	/*-webkit-transform: rotateY(540deg);*/
+}
+
+.block .front{
+	z-index: 50;
+}
+.block .back{
+	z-index: 10;
+}
+.rotated .back, .mover .block:hover .back{
+	z-index: 90;
+}
+
+.side{
+	position: absolute;	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+	
+	-webkit-backface-visibility: hidden;
+	
+}
+
+.front{
+	
+	background-color: black;
+	height: 150px;
+	width: 100px;
+
+	
+}
+
+.back{
+	display:block;
+    position:abolute; 
+	background-color: black;
+	width: 350px;
+	height: 400px;
+	left:-200px;
+	top: -160px;
+	
+	-webkit-transform: rotateY(180deg);
+}
+
+#block1{
+
+	display: inline-block;
+	left:70px;
+top:12%;
+}
+#block2{
+
+	display: inline-block;
+	
+	left:240px;
+top:12%;
+}
+#block3{
+
+	display: inline-block;
+	left:410px;
+top:12%;
+}
+#block4{
+
+	display: inline-block;
+	left:580px;
+top:12%;
+}
+#block5{
+
+	display: inline-block;
+	left:750px;
+top:12%;
+}
+.gone{
+position:absolute;
+left:1000px;
+top: 1000px;
+z-index: -10;
+
 }
