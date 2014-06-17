@@ -52,7 +52,44 @@ $(document).ready(function(){
 			}
 		});
 		
-		var s = 1;
+
+		$('.myButton').click(function(){
+			var e = new Array();
+			var o = new Array();
+			$('.enemy').each(function(){
+				var id = $(this).attr('id');
+				e.push(id);
+			});
+			$('.our').each(function(){
+				var id = $(this).attr('id');
+				o.push(id);
+			});
+			var oscore = 0;
+
+
+			for(var i = 0;i<e.length;i++){
+				if(e[i] > o[i]){
+					oscore -= 1;
+				}
+				else if(e[i] < o[i]) {
+					oscore += 1;
+				}
+				else{
+					oscore += 0;
+				}
+			}
+
+			if(oscore>1){
+				alert("You win!");
+			}
+			else{
+				alert("You lose!");
+			}
+		});
+
+
+
+
 	}
 	else{
 		$('body').html("");
