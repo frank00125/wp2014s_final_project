@@ -42,6 +42,16 @@ query.first({
     // Do something with the returned Parse.Object values
     
       var object = results;
+      
+      	if(typeof(Storage) !== "undefined") {
+		localStorage.setItem("careid", object.id);
+		
+
+	} else {
+		alert("can't store to localstorage!");
+		}
+      
+      
       //alert(object.id + ' - ' + object.get('no'));
       Content = object.get('content');
       Title = object.get('name');
@@ -147,15 +157,5 @@ function changeClass1(){
 			getData();
 		}
 		
-		
-function storecard(){
-	if(typeof(Storage) !== "undefined") {
-		
-		
-
-	} else {
-		alert("can't store to localstorage!");
-		}
-	}
 
 
