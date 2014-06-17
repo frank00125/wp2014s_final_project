@@ -19,7 +19,20 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 	      
 	       Parse.User.logIn(response.id,"0000",{
 	    	  success: function(user){
-		 	  window.location.assign("My_Card.html");
+	    	  	var Owncard = Parse.Object.extend("ownCard");
+			var owncard = new Owncard();
+			var cardid = localStorage.getItem("careid");
+ 
+			owncard.set("card", cardid);
+			owncard.set("user", Parse.User.current());
+			owncard.save(null, {
+  				success: function(gameScore) {
+    					window.location.assign("My_Card.html");
+  				},
+  				error: function(gameScore, error) {
+    					console.log("error!");
+  				}
+			});
 		  },
 		  error: function(user, error){
 			  var usr = new Parse.User();
