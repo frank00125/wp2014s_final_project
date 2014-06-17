@@ -1,7 +1,13 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
+                  website: http://ogp.me/ns/website#">
 		<meta charset="UTF-8">
+		<meta property="og:title" content="立法卡到陰" >
+		<meta property="og:type" content="website" >
+		<meta property="og:url" content="http://frank00125.github.io/wp2014s_final_project/Card_drawing.html" >
+		<meta property="og:image" content="http://frank00125.github.io/wp2014s_final_project/img/chooseCard/card_back.png" >
+		<meta property="og:description" content="The best legal card website!">
 		<title>抽卡中</title>
 		<script type="text/javascript" src="jQuery.js"></script>
 		<link rel="stylesheet" type="text/css" href="Card_drawing.css">
@@ -14,6 +20,16 @@
 
 	</head>
 	<body>
+
+		<script>(function(d, s, id) {
+ 			 var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=243758945748336&version=v2.0";
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+
 		<div  class="cards">
 			<div id="block1" class="block" onclick="changeClass1()">
 				<div class="front side">
@@ -27,7 +43,7 @@
 						<p>案由：</p>
 						<div id="result1"></div>
 						<div class="share">
-							<a class="fb" href=""><img src="img/cardContent/fb_share.png"></a>
+							<div class="fb-share-button" data-href="http://frank00125.github.io/wp2014s_final_project/Card_drawing.html" data-type="button"></div>
 							<a class="love" href=""><img src="img/cardContent/love.png"></a>
 							<a class="readmore" href=""><img src="img/cardContent/readmore.png"></a>
 						</div>
@@ -48,7 +64,7 @@
 						<p>案由：</p>
 						<div id="result2"></div>
 						<div class="share">
-							<a class="fb" href=""><img src="img/cardContent/fb_share.png"></a>
+							<div class="fb-share-button" data-href="http://frank00125.github.io/wp2014s_final_project/Card_drawing.html" data-type="button"></div>
 							<a class="love" href=""><img src="img/cardContent/love.png"></a>
 							<a class="readmore" href=""><img src="img/cardContent/readmore.png"></a>
 						</div>
@@ -69,7 +85,7 @@
 						<p>案由：</p>
 						<div id="result3"></div>
 						<div class="share">
-							<a class="fb" href=""><img src="img/cardContent/fb_share.png"></a>
+							<div class="fb-share-button" data-href="http://frank00125.github.io/wp2014s_final_project/Card_drawing.html" data-type="button"></div>
 							<a class="love" href=""><img src="img/cardContent/love.png"></a>
 							<a class="readmore" href=""><img src="img/cardContent/readmore.png"height="33px" width="100px"></a>
 						</div>
