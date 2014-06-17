@@ -1,7 +1,16 @@
 var isClickBattle = false;
 var isClickFlow = false;
-
+var origin = '';
 $(document).ready(function(){
+	$('img.level').mouseover(function(){
+		origin = $(this).attr('src');
+		$(this).attr('src','img/button/readMore.jpg');
+	});
+
+	$('img.level').mouseout(function(){
+		$(this).attr('src',origin);
+	});
+
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
 	if(current_user){
@@ -15,7 +24,7 @@ $(document).ready(function(){
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
 					var s = getElementStringByBattleCard(card.get('name'),card.get('level')
-								,card.id,data[i].get('flow'));
+								,card.id,data[i].get('flow'),card.get('url'));
 					$('div.BattleCard').append(s);
 				}
 			}
@@ -29,7 +38,7 @@ $(document).ready(function(){
 				var s1 = "";
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
-					var s = getElementStringByownCard(card.get('name'),card.get('level'),card.id);
+					var s = getElementStringByownCard(card.get('name'),card.get('level'),card.id,card.get('url'));
 					s1 += s;
 					if((i + 1) % 5 == 0){
 						var string = "<div class='cards'>"+s1+"</div>";
@@ -174,9 +183,6 @@ $(document).ready(function(){
 				isClickFlow = false;
 			}
 		});
-		
-		$('img.level').hover(function(){
-			$(this).attr('src','img/button/readMore.jpg')
 	}
 	else{
 		alert("請登入");
@@ -202,19 +208,19 @@ function updateCard(id, bcard){
 	});
 }
 
-function getElementStringByownCard(name, level, id){
+function getElementStringByownCard(name, level, id,url){
 	var s0 = "<input class='checkbox' type='checkbox' value='"+id+"'>"
 	var s1 = "<h5>"+name+"</h5>";
-	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
+	var s2 = "<a href='"+url+"'><img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' ></a>";
 	var s = "<div class='card'>"+s0+s1+s2+"</div>";
 	
 	return s;
 }
 
-function getElementStringByBattleCard(name, level, id, number){
+function getElementStringByBattleCard(name, level, id, number,url){
 	var s0 = "<input type='text' id='"+id+"' class='flow' value='"+number+"' disabled>";
 	var s1 = "<h5>"+name+"</h5>";
-	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
+	var s2 = "<a href='"+url+"'><img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' ></a>";
 	var s = "<div class='card'>"+s0+s1+s2+"</div>";
 	
 	return s;
