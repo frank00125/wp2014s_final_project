@@ -1,11 +1,10 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-      signup = function(){
-      
-      if(document.getElementById('password').value != document.getElementById('confirmpassword').value){
+if(document.getElementById('password').value != document.getElementById('confirmpassword').value){
             alert('密碼不一樣，請確認密碼是一樣的！！');
       }
-      
+
+      signup = function(){
       
         var user = new Parse.User();
             user.set("username", document.getElementById('email').value);
