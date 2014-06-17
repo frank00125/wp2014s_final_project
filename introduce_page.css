@@ -1,0 +1,57 @@
+﻿body{
+	max-width: 1366px;
+	background-color: rgb(206,171,126);
+	background-image: url("https://googledrive.com/host/0B-4Pzr7Y3mNdM25OTmp4MnUydTQ");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Microsoft JhengHei";
+	height: 600px;
+	width: auto;
+}
+
+div#head{
+	margin-top: 60px;
+}
+
+article{
+	margin-top: 0px;
+}
+
+h1{
+  text-align:center;
+  Padding-top:2em;
+}
+
+p{
+  text-align: left;
+  font-size: 1em;
+  line-height: 35px;
+  position: relative;
+  padding-right: 10em;
+  padding-bottom: 1em; 
+  padding-left: 10em;
+}
+
+input{
+	display: block;
+	margin: 0px auto;
+	margin-left: 680px;
+}
+#logo{
+	margin-top: 20px;
+	margin-left:100px;
+	width:600px;
+	height: 120px;
+}
+
+#enter{
+	display:inline-block;
+	float: right;
+	width: auto;
+	height: auto;
+	font-size: 24pt;
+	color: white;
+	text-decoration: none;
+	margin-top: 90px;
+	margin-right: 120px;
+}
