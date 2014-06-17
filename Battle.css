@@ -50,10 +50,6 @@ p#links a{
 }
 
 div.enemy_card, p.vs, div.our_card{
-	display: none;
+	display: block;
 	color: white;
-}
-
-iframe#battleButton{
-	margin: auto;
 }

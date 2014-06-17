@@ -6,11 +6,13 @@ $(document).ready(function(){
 		var query1 = new Parse.Query(BattleCard);
 		query1.include('card');
 		query1.equalTo('user',current_user);
+		query1.ascending('flow');
 		query1.find({
 			success: function(data) {
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
-					var s = getElementString(card.get('name'),card.get('level'));
+					var s = getElementStringByBattleCard(card.get('name'),card.get('level')
+								,card.get('no'),data[i].get('flow'));
 					$('div.BattleCard').append(s);
 				}
 			}
@@ -24,7 +26,7 @@ $(document).ready(function(){
 				var s1 = "";
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
-					var s = getElementString(card.get('name'),card.get('level'));
+					var s = getElementStringByownCard(card.get('name'),card.get('level'),card.get('no'));
 					s1 += s;
 					if((i + 1) % 5 == 0){
 						var string = "<div class='cards'>"+s1+"</div>";
@@ -45,10 +47,20 @@ $(document).ready(function(){
 	}
 });
 
-function getElementString(name, level){
+function getElementStringByownCard(name, level, no){
+	var s0 = "<input class='checkbox' type='checkbox' value='"+no+"'>"
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
-	var s = "<div class='card'>"+s1+s2+"</div>";
+	var s = "<div class='card'>"+s0+s1+s2+"</div>";
+	
+	return s;
+}
+
+function getElementStringByBattleCard(name, level, no, number){
+	var s0 = "<input type='text' id='"+no+"' class='flow' value='"+number+"' disabled>";
+	var s1 = "<h5>"+name+"</h5>";
+	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
+	var s = "<div class='card'>"+s0+s1+s2+"</div>";
 	
 	return s;
 }
@@ -87,4 +99,12 @@ $('#logout').click(function(){
     		js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
+});
+
+$('img#changeBattleCard').click(function(){
+	
+});
+
+$('img#changeFlow').click(function(){
+	
 });

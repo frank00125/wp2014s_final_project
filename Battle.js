@@ -2,7 +2,17 @@ $(document).ready(function(){
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
 	if(current_user){
-		var BattleCard = Parse.Object.extend('BattleCard');
+		var query = new Parse.Query(Parse.User);
+		query.equalTo('canBattle',true);
+		query.find({
+			success: function(data){
+				var member_number = data.length;
+				var random = member_number * rand();
+				var usr = data[random];
+				var s = 1;
+			}
+		});
+		/*var BattleCard = Parse.Object.extend('BattleCard');
 		var query1 = new Parse.Query(BattleCard);
 		query1.include('card');
 		query1.equalTo('user',current_user);
@@ -14,7 +24,7 @@ $(document).ready(function(){
 					$('div.BattleCard').append(s);
 				}
 			}
-		});
+		});*/
 	}
 	else{
 		alert("請登入");
