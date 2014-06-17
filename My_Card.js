@@ -174,6 +174,9 @@ $(document).ready(function(){
 				isClickFlow = false;
 			}
 		});
+		
+		$('img.level').hover(function(){
+			$(this).attr('src','img/button/readMore.jpg')
 	}
 	else{
 		alert("請登入");
