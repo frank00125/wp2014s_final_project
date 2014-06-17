@@ -148,7 +148,7 @@ function changeClass1(){
 		}
 
 
- window.fbAsyncInit = function() {
+ /*window.fbAsyncInit = function() {
   FB.init({
     appId      : '243758945748336',
     cookie     : true,  // enable cookies to allow the server to access 
@@ -214,4 +214,4 @@ function changeClass1(){
     });
     };
     
-  };
+  };*/
