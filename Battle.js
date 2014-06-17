@@ -8,7 +8,7 @@ $(document).ready(function(){
 		query.find({
 			success: function(data){
 				var member_number = data.length;
-				var randomnum = Math.floor(data.length);
+				var randomnum = Math.floor((Math.random() * member_number) + 1);
 				console.log(data[randomnum]);
 				//var random = member_number * rand();
 				//var usr = data[random];
