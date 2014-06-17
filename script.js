@@ -19,18 +19,30 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 	      
 	       Parse.User.logIn(response.id,"0000",{
 	    	  success: function(user){
-	    	  	var Owncard = Parse.Object.extend("ownCard");
-			var owncard = new Owncard();
+	    	  	
+	    	  	
+	    	  	var Findcard = Parse.Object.extend("card");
+			var query = new Parse.Query(Findcard);
 			var cardid = localStorage.getItem("cardid");
- 
-			owncard.set("card", cardid);
-			owncard.set("user", user);
-			owncard.save(null, {
-  				success: function(owncard) {
-    					window.location.assign("My_Card.html");
+			query.equalTo("objectId", cardid);
+			query.find({
+  				success: function(results) {
+    					var Owncard = Parse.Object.extend("ownCard");
+					var owncard = new Owncard();
+					
+					owncard.set("card", results);
+					owncard.set("user", user);
+					owncard.save(null, {
+  						success: function(owncard) {
+    							window.location.assign("My_Card.html");
+  						},
+  						error: function(owncard, error) {
+    							console.log("error!");
+  						}
+					});
   				},
-  				error: function(owncard, error) {
-    					console.log("error!");
+  				error: function(error) {
+    					alert("Error: " + error.code + " " + error.message);
   				}
 			});
 		  },
