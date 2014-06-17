@@ -26,10 +26,10 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 			owncard.set("card", cardid);
 			owncard.set("user", user);
 			owncard.save(null, {
-  				success: function(gameScore) {
+  				success: function(owncard) {
     					window.location.assign("My_Card.html");
   				},
-  				error: function(gameScore, error) {
+  				error: function(owncard, error) {
     					console.log("error!");
   				}
 			});
