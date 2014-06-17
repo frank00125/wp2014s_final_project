@@ -77,7 +77,7 @@ query.first({
     //alert('New object created with objectId: ' + own.id );
   },
   error: function(own, error) {
-    // Execute any logic that should take place if the save fails.
+    // Execute any logic that should take place if the save fails.
     // error is a Parse.Error with an error code and description.
     alert('Failed to create new object, with error code: ' + error.description);
   }
@@ -172,18 +172,6 @@ function changeClass1(){
 		
 function storecard(){
 	if(typeof(Storage) !== "undefined") {
-		
-		var card = Parse.Object.extend("card");
-		var query = new Parse.Query(card);
-		var No = ramdomNum();
-		query.equalTo("no", No);
-		query.first({
-  		success: function(results) {
-    
-      			var object = results;
-      			localstorage.setItem("cardID", object);
-  		}
-		});
 		
 		
 
