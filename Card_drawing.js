@@ -212,6 +212,5 @@ fbLogin = function() {
                       });
       }
     });
-    };
     
   };	
