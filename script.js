@@ -34,7 +34,8 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 					owncard.set("user", user);
 					owncard.save(null, {
   						success: function(owncard) {
-    							window.location.assign("My_Card.html");
+  							localStorage.removeItem("cardid");
+    							window.location.assign("rule.html");
   						},
   						error: function(owncard, error) {
     							console.log("error!");
