@@ -106,3 +106,7 @@ z-index: -10;
 .share{
 	float:right;
 }
+
+.fb-share-button{
+	margin-right: 20px;
+}
