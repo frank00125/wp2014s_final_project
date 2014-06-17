@@ -44,7 +44,7 @@ query.first({
       var object = results;
       
       	if(typeof(Storage) !== "undefined") {
-		localStorage.setItem("cardid", object);
+		localStorage.setItem("cardid", object.id);
 		
 
 	} else {
