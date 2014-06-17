@@ -29,7 +29,7 @@ $(document).ready(function(){
 				var s1 = "";
 				for(var i=0;i <data.length;i++){
 					var card = data[i].get('card');
-					var s = getElementStringByownCard(card.get('name'),card.get('level'),card.get('no'));
+					var s = getElementStringByownCard(card.get('name'),card.get('level'),card.id);
 					s1 += s;
 					if((i + 1) % 5 == 0){
 						var string = "<div class='cards'>"+s1+"</div>";
@@ -48,6 +48,10 @@ $(document).ready(function(){
 		$('#changeBattleCard').click(function(){
 			if(isClickBattle==false){
 				$('.checkbox').css('display','inline-block');
+				var x = $('.flow');
+				for(var i = 0;i<x.length;i++){
+					var id = x[i].id;
+					$("")
 				isClickBattle = true;
 			}
 			else{
@@ -91,11 +95,11 @@ $(document).ready(function(){
 	}
 	else{
 		alert("請登入");
-	}
+	} 
 });
 
-function getElementStringByownCard(name, level, no){
-	var s0 = "<input class='checkbox' type='checkbox' value='"+no+"'>"
+function getElementStringByownCard(name, level, id){
+	var s0 = "<input class='checkbox' type='checkbox' value='"+id+"'>"
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+name+"' >";
 	var s = "<div class='card'>"+s0+s1+s2+"</div>";
