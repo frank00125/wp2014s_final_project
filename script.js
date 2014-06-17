@@ -24,7 +24,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 			var cardid = localStorage.getItem("cardid");
  
 			owncard.set("card", cardid);
-			owncard.set("user", Parse.User.current());
+			owncard.set("user", user);
 			owncard.save(null, {
   				success: function(gameScore) {
     					window.location.assign("My_Card.html");
