@@ -7,6 +7,7 @@ $(document).ready(function(){
 		query.find({
 			success: function(data){
 				var member_number = data.length;
+				console.log(data);
 				//var random = member_number * rand();
 				//var usr = data[random];
 				var s = 1;
@@ -25,16 +26,6 @@ $(document).ready(function(){
 				}
 			}
 		});*/
-		
-		var randomuser = [];
-		var User = Parse.Object.extend('User');
-		var query = new Parse.Query(User);
-		query.find({
-			success: function(data) {
-				console.log(data);
-			}
-		});
-		
 	}
 	else{
 		alert("請登入");
