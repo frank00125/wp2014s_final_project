@@ -5,12 +5,13 @@ $(document).ready(function(){
 		var query = new Parse.Query(Parse.User);
 		query.equalTo('canBattle',true);
 		query.find({
-			success: function(data.user){
+			success: function(data){
 				var member_number = data.length;
-				console.log(data);
+				var randomnum = Math.floor((Math.random() * 10) + 1);
+				console.log(randomnum);
 				//var random = member_number * rand();
 				//var usr = data[random];
-				var s = 1;
+				//var s = 1;
 			}
 		});
 		/*var BattleCard = Parse.Object.extend('BattleCard');
