@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var query = new Parse.Query(Parse.User);
 		query.equalTo('canBattle',true);
 		query.find({
-			success: function(data){
+			success: function(data.user){
 				var member_number = data.length;
 				console.log(data);
 				//var random = member_number * rand();
