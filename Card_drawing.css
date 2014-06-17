@@ -108,10 +108,12 @@ z-index: -10;
 }
 
 .fb-share-button{
-	margin-right: 50px;
+	left:50px;
+	margin-right: 20px;
 }
 
 #loginbtn{
+	margin-right:20px;
 	width:10%;
 	height:10%;
 }
