@@ -2,6 +2,7 @@ var isClickBattle = false;
 var isClickFlow = false;
 var origin = '';
 $(document).ready(function(){
+	
 	$('img.level').mouseover(function(){
 		origin = $(this).attr('src');
 		$(this).attr('src','img/button/readMore.jpg');
