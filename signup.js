@@ -5,6 +5,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
         var user = new Parse.User();
             user.set("username", document.getElementById('email').value);
             user.set("password", document.getElementById('password').value);
+            user.set("canBattle",null);
             user.signUp(null, {
                 success: function(user){
                   alert('success!!')
