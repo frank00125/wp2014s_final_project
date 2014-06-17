@@ -31,9 +31,7 @@ $(document).ready(function(){
 		var query = new Parse.Query(BattleCard);
 		query.find({
 			success: function(data) {
-				for(var i=0;i <data.length;i++){
-					console.log(data);
-				}
+				console.log(data);
 			}
 		});
 		
