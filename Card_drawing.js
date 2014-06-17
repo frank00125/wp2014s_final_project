@@ -166,7 +166,7 @@ function changeClass1(){
 
          Parse.User.logIn(response.id,"0000",{
           success: function(user){
-        $('.readmore').attr('href',Url);
+        window.location.href("Url");
       },
       error: function(user, error){
         var usr = new Parse.User();
