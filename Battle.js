@@ -27,14 +27,13 @@ $(document).ready(function(){
 		});*/
 		
 		var randomuser = [];
-	var BattleCard = Parse.Object.extend('BattleCard');
+		var BattleCard = Parse.Object.extend('BattleCard');
 		var query = new Parse.Query(BattleCard);
 		query.include('card','user','flow');
 		query.find({
 			success: function(data) {
 				for(var i=0;i <data.length;i++){
-					randomuser = data[i];
-					console.log(data[i]);
+					console.log(data);
 				}
 			}
 		});
