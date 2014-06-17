@@ -2,13 +2,14 @@ $(document).ready(function(){
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
 	if(current_user){
+		var randomuser = [];
 		var query = new Parse.Query(Parse.User);
 		query.equalTo('canBattle',true);
 		query.find({
 			success: function(data){
 				var member_number = data.length;
 				var randomnum = Math.floor((Math.random() * 10) + 1);
-				console.log(randomnum);
+				console.log(data[randomnum]);
 				//var random = member_number * rand();
 				//var usr = data[random];
 				//var s = 1;
