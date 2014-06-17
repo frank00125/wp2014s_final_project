@@ -21,7 +21,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 	    	  success: function(user){
 	    	  	var Owncard = Parse.Object.extend("ownCard");
 			var owncard = new Owncard();
-			var cardid = localStorage.getItem("careid");
+			var cardid = localStorage.getItem("cardid");
  
 			owncard.set("card", cardid);
 			owncard.set("user", Parse.User.current());
