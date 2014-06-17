@@ -1,3 +1,6 @@
+var isClickBattle = false;
+var isClickFlow = false;
+
 $(document).ready(function(){
 	Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 	var current_user = Parse.User.current();
@@ -41,6 +44,56 @@ $(document).ready(function(){
 				}
 			}
 		});
+		
+		var isChangeFlow = false;
+		$('#changeBattleCard').click(function(){
+			if(isClickBattle==false){
+				$('.checkbox').css('display','inline-block');
+				isClickBattle = true;
+			}
+			else{
+				$('.checkbox').css('display','none');
+				isClickBattle = false;
+			}
+		});
+		
+		$('#changeFlow').click(function(){
+			if(isClickFlow==false){
+				$('.flow').prop('disabled',false);
+				isClickFlow = true;
+			}
+			else{
+				var x = $('.flow');
+				var arr = new Array("","","","","");
+				var isDuplicated = false
+				for(var i=0;i<x.length;i++){
+					if(x[i].value > 5){
+						isDuplicated = true;
+						break;
+					}
+					arr[x[i].value - 1] = x[i].id;
+				}
+				for(var i=0;i<arr.length;i++){
+					if(arr[i]==""){
+						isDuplicated = true;
+						break;
+					}
+				}
+				if(isDuplicated==true){
+					for(var i=0;i<5;i++){
+						x[i].value = i + 1;
+					}
+					isChangeFlow = false;
+				}
+				else
+					isChangeFlow = true;
+				x.prop('disabled',true);
+				isClickFlow = false;
+			}
+		});
+		
+		if(isChangeFlow==true){
+			
 	}
 	else{
 		alert("請登入");
@@ -99,12 +152,4 @@ $('#logout').click(function(){
     		js.src = "//connect.facebook.net/en_US/sdk.js";
 		 fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
-});
-
-$('img#changeBattleCard').click(function(){
-	
-});
-
-$('img#changeFlow').click(function(){
-	
 });

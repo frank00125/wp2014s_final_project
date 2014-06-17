@@ -155,15 +155,17 @@ a.readmore img{
 }
 
 input.flow{
-	display: none;
+	display: inline-block;
 	margin: 0px;
 	width: 10px;
+	height: 15px;
 }
 
 input.checkbox{
 	display: none;
 	margin: 0px;
 	width: 10px;
+	height: 10px;
 }
 
 div.card h5{
