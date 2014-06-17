@@ -130,3 +130,14 @@ position: absolute;
 	width:100px;
 	height:100px;
 }
+
+#links{
+	display: inline-block;
+	float: right;
+	width: auto;
+	height: auto;
+	font-size: 24pt;
+	color: white;
+	margin-top: 72px;
+	margin-right: 30px;
+}
