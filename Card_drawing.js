@@ -1,15 +1,5 @@
 Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ", "FhvDpueqCRBp1bvNDRL7Scbb00J9f7KoyQMmlnvC");
 
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '243758945748336',
-    cookie     : true,  // enable cookies to allow the server to access 
-                        // the session
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.0' // use version 2.0
-  });
-
-
 var Content;
 var Title;
 var Url;
@@ -158,7 +148,17 @@ function changeClass1(){
 		}
 
 
-fbLogin = function() {  
+ window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '243758945748336',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.0' // use version 2.0
+  });
+  
+
+  fbLogin = function() {  
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
         // Logged into your app and Facebook.
@@ -177,7 +177,7 @@ fbLogin = function() {
 
                 usr.signUp(null, {
                   success: function(user) {
-                    window.location.href(Url);
+                    window.location.assign("LoginPage.html");
                   },
                   error: function(user, error) {
                     console.log("Error: " + error.code + " " + error.message);
@@ -212,5 +212,6 @@ fbLogin = function() {
                       });
       }
     });
+    };
     
-  };	
+  };
