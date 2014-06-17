@@ -8,6 +8,11 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.0' // use version 2.0
   });
+  
+  if(document.getElementById('password').value != document.getElementById('confirmpassword').value){
+  	alert('密碼不一樣，請確認密碼是一樣的！！');
+  }
+  else{
   fbLogin = function() {  
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
@@ -64,6 +69,9 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
       }
     });
     };
+    
+  }
+    
   };
 
   // Load the SDK asynchronously
