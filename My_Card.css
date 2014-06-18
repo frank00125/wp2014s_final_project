@@ -21,7 +21,7 @@ div.button{
 
 div#head{
 	margin-left: 5%;
-	margin-top: 15%;
+	margin-top: 25%;
 	max-width: 1224px;
 	width: auto;
 }
@@ -87,8 +87,8 @@ div.cards, div.cards_start{
 
 div.cards{
 	background-color: rgb(255, 132, 31);
-	margin: 0px;
-	padding-left: 100px;
+	padding-left: 30px;
+	margin:30px;
 }
 
 
@@ -97,14 +97,15 @@ div.BattleCard{
 	height: 150px;
 	padding-right:100px;
 	background-color: rgb(255, 132, 31);
-	margin: 0px;
-	padding-left: 100px;
+	margin: 30px;
+	padding-left: 30px;
+	display:inline-block;
 }
 
 div.card{
 	display: inline-block;
 	width: 120px;
-	height: 140px;
+	height: 155px;
 	background-color: white;
 	margin: 0px 10px;
 	margin-top: 10px;
@@ -173,4 +174,13 @@ div.card h5{
 	text-align: center;
 	color: red;
 	height: 65px;
+}
+
+#aboutbattle{
+	margin-left: 80px;
+}
+
+#aboutbattle1{
+	margin-left: 80px;
+	margin-top: 100px;
 }
