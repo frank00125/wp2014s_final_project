@@ -187,6 +187,7 @@ $(document).ready(function(){
 	}
 	else{
 		alert("請登入");
+		window.location.assign("LoginPage.html");
 	} 
 });
 

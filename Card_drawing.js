@@ -3,6 +3,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ", "FhvDpueqCRBp1bvNDR
 var Content;
 var Title;
 var Url;
+var Level;
 function ramdomNum(){
  
 var vmaxNum = 3;  
@@ -56,6 +57,13 @@ query.first({
       Content = object.get('content');
       Title = object.get('name');
       Url=object.get('url');
+      Level = object.get('level');
+
+      $('#levelpicture').html("<img id='level' src='img/rank/"+Level+".jpg' >");
+        $('#levelpicture1').html("<img id='level' src='img/rank/"+Level+".jpg' >");
+          $('#levelpicture2').html("<img id='level' src='img/rank/"+Level+".jpg' >");
+
+
 
       if (Content.length>200){
       var	moreup = "...";

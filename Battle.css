@@ -69,11 +69,11 @@ div.enemy_card, p.vs, div.our_card{
 
 
 .enemy_card{
-	width:1000px;
-	height:400px;
-	display: inline;
+	width:1200px;
+	height:600px;
+	display:inline;
 	
-	top: 30%;
+	top: 45%;
 	left:10%;
 }
 
