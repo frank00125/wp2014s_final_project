@@ -99,7 +99,7 @@ $(document).ready(function(){
 					}
 			else{
 				alert("You lose!");
-				window.location.assign('My_Card.html');
+				//window.location.assign('My_Card.html');
 			}
 		});
 
