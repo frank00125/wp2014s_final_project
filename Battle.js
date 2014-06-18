@@ -79,7 +79,7 @@ $(document).ready(function(){
 				}
 			}
 
-			if(oscore>1){
+			if(oscore > 0){
 				alert("You win!");
 			}
 			else{
