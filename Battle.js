@@ -81,9 +81,11 @@ $(document).ready(function(){
 
 			if(oscore > 0){
 				alert("You win!");
+				window.location.assign('My_Card.html');
 			}
 			else{
 				alert("You lose!");
+				window.location.assign('My_Card.html');
 			}
 		});
 
