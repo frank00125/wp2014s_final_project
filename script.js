@@ -135,7 +135,7 @@ Parse.initialize("3zNjT9EGuUYzq0Ucqj9mrYOZBQQri1u40LqDGhiJ","FhvDpueqCRBp1bvNDRL
 			});
   		},
   		error: function(user, error) {
-    			console.log("Wrong email or password!!");
+    			alert("Wrong email or password!!");
   		}
 		});
   }
