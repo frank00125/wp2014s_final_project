@@ -81,9 +81,24 @@ $(document).ready(function(){
 
 			if(oscore > 0){
 				alert("You win!");
-			}
+				var bc = Parse.Object.extend('user');
+				var query = new Parse.Query(bc);
+					query.include('win');
+					query.equalTo('user',Parse.User.current());
+					query.find({
+					success: function(result){
+							result += 1;
+							window.location.assign('My_Card.html');
+				
+					},
+					error: function(error){
+						console.log(error);
+					}
+				});
+					}
 			else{
 				alert("You lose!");
+				window.location.assign('My_Card.html');
 			}
 		});
 
