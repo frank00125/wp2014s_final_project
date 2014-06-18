@@ -81,25 +81,9 @@ $(document).ready(function(){
 
 			if(oscore > 0){
 				alert("You win!");
-				var bc = Parse.Object.extend('user');
-				var query = new Parse.Query(bc);
-					query.include('win');
-					query.equalTo('user',Parse.User.current());
-					query.find({
-					success: function(result){
-							console.log(result);
-							result += 1;
-							window.location.assign('My_Card.html');
-				
-					},
-					error: function(error){
-						console.log(error);
-					}
-				});
-					}
+			}
 			else{
 				alert("You lose!");
-				window.location.assign('My_Card.html');
 			}
 		});
 
@@ -118,7 +102,7 @@ $(document).ready(function(){
 function getElementStringOfEnemy(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='enemy' id='"+level+"' >"+s2+"</div>";
+	var s = "<div class='enemy' id='"+level+"' >"+s1+s2+"</div>";
 	
 	return s;
 }
@@ -126,7 +110,7 @@ function getElementStringOfEnemy(name, level){
 function getElementStringOfOur(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='our' id='"+level+"' >"+s2+"</div>";
+	var s = "<div class='our' id='"+level+"' >"+s1+s2+"</div>";
 	
 	return s;
 }

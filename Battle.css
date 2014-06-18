@@ -26,6 +26,10 @@ div#head{
 	width: auto;
 }
 
+h5{
+	text-indent: 10pt;
+}
+
 img#logo{
 	display: inline;
 	margin-left: 0px;
@@ -62,18 +66,18 @@ div.enemy_card, p.vs, div.our_card{
 .vs {
 	display: inline-block;
 	position:absolute;
-	top: 85%;
+	top: 88%;
 	left:45%;
 
 }
 
 
 .enemy_card{
-	width:1500px;
+	width:1200px;
 	height:500px;
 	display:inline;
 	
-	top: 50%;
+	top: 45%;
 	left:5%;
 }
 
@@ -86,16 +90,18 @@ div.enemy_card, p.vs, div.our_card{
 }
 
 .enemy{
-	width:500px;
-	height:500px;
+	width:130px;
+	height:150px;
 	display:relative;
-	display: inline;
+	display: inline-block;
 	margin-left: 66px;
 }
 
 .our{
+	width:130px;
+	height:150px;
 	display:relative;
-	display: inline;
+	display: inline-block;
 	margin-left: 66px;
 
 }
@@ -103,8 +109,8 @@ div.enemy_card, p.vs, div.our_card{
 
 .myButton {
 	position :absolute;
-left:1000px;
-top:85%;
+right:100px;
+top:88%;
 	background-color:#6e3a37;
 	-moz-border-radius:23px;
 	-webkit-border-radius:23px;
@@ -121,15 +127,15 @@ top:85%;
 	text-shadow:0px 1px 0px #853630;
 }
 .myButton:hover {
-	left:1000px;
-	top:85%;
+	right:100px;
+	top:88%;
 	background-color:#eb675e;
 }
 .myButton:active {
-	left:1000px;
+	right:100px;
 	
 	position:absolute;
-	top:86%;
+	top:89%;
 }
 
 .block {
