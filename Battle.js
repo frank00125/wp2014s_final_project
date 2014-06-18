@@ -87,6 +87,7 @@ $(document).ready(function(){
 					query.equalTo('user',Parse.User.current());
 					query.find({
 					success: function(result){
+							console.log(result);
 							result += 1;
 							window.location.assign('My_Card.html');
 				
