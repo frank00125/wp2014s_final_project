@@ -62,31 +62,32 @@ div.enemy_card, p.vs, div.our_card{
 .vs {
 	display: inline-block;
 	position:absolute;
-	top: 62%;
+	top: 85%;
 	left:45%;
 
 }
 
 
 .enemy_card{
-	width:1200px;
-	height:600px;
+	width:1500px;
+	height:500px;
 	display:inline;
 	
-	top: 45%;
-	left:10%;
+	top: 50%;
+	left:5%;
 }
 
 .our_card{
-	display: inline-block;
+	display: inline;
 	position: absolute;
-	top: 68%;
+	top: 90%;
 	width:100%;
-	left:10%;
+	left:5%;
 }
 
 .enemy{
-
+	width:500px;
+	height:500px;
 	display:relative;
 	display: inline;
 	margin-left: 66px;
@@ -103,7 +104,7 @@ div.enemy_card, p.vs, div.our_card{
 .myButton {
 	position :absolute;
 left:1000px;
-top:60%;
+top:85%;
 	background-color:#6e3a37;
 	-moz-border-radius:23px;
 	-webkit-border-radius:23px;
@@ -121,14 +122,14 @@ top:60%;
 }
 .myButton:hover {
 	left:1000px;
-	top:60%;
+	top:85%;
 	background-color:#eb675e;
 }
 .myButton:active {
 	left:1000px;
 	
 	position:absolute;
-	top:61%;
+	top:86%;
 }
 
 .block {
@@ -223,5 +224,11 @@ position:absolute;
 left:1000px;
 top: 1000px;
 z-index: -10;
+
+}
+
+#name{
+
+
 
 }

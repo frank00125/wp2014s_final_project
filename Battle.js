@@ -102,7 +102,7 @@ $(document).ready(function(){
 function getElementStringOfEnemy(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='enemy' id='"+level+"' >"+s1+s2+"</div>";
+	var s = "<div class='enemy' id='"+level+"' >"+s2+"</div>";
 	
 	return s;
 }
@@ -110,7 +110,7 @@ function getElementStringOfEnemy(name, level){
 function getElementStringOfOur(name, level){
 	var s1 = "<h5>"+name+"</h5>";
 	var s2 = "<img class='level' src='img/rank/"+level+".jpg' alt='"+level+"' >";
-	var s = "<div class='our' id='"+level+"' >"+s1+s2+"</div>";
+	var s = "<div class='our' id='"+level+"' >"+s2+"</div>";
 	
 	return s;
 }
