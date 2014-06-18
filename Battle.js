@@ -89,7 +89,7 @@ $(document).ready(function(){
 					success: function(result){
 							console.log(result);
 							result += 1;
-							window.location.assign('My_Card.html');
+							//window.location.assign('My_Card.html');
 				
 					},
 					error: function(error){
