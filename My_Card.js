@@ -54,6 +54,7 @@ $(document).ready(function(){
 				}
 			}
 		});
+		
 		var originArr = [];
 		$('#changeBattleCard').click(function(){
 			if(isClickBattle==false){
@@ -95,48 +96,80 @@ $(document).ready(function(){
 							arr.push(this.value);
 						}
 					});
-					$('.checkbox').each(function(){
-						if($(this).prop('checked')==true){
-							var value = this.value;
-							var card = Parse.Object.extend('card');
-							var innerQuery = new Parse.Query(card);
-							innerQuery.equalTo('objectId',value);
-							innerQuery.first({
-								success: function(data){
-									var BC = Parse.Object.extend('BattleCard');
-									var query = new Parse.Query(BC);
-									query.equalTo('user',Parse.User.current());
-									query.ascending('flow');
-									query.find({
-										success: function(result){
-											var id = data.id;
-											var array = new Array();
-											for(var i=0;i<result.length;i++){
-												array.push(result[i].get('card').id);
+					var html = $('div.BattleCard').html();
+					html = html.trim();
+					if(html != ""){
+						$('.checkbox').each(function(){
+							if($(this).prop('checked')==true){
+								var value = this.value;
+								var card = Parse.Object.extend('card');
+								var innerQuery = new Parse.Query(card);
+								innerQuery.equalTo('objectId',value);
+								innerQuery.first({
+									success: function(data){
+										var BC = Parse.Object.extend('BattleCard');
+										var query = new Parse.Query(BC);
+										query.equalTo('user',Parse.User.current());
+										query.ascending('flow');
+										query.find({
+											success: function(result){
+												var id = data.id;
+												var array = new Array();
+												for(var i=0;i<result.length;i++){
+													array.push(result[i].get('card').id);
+												}
+												var bool = [false,false,false,false,false];
+												var a = arr;
+												for(var i=0;i<5;i++){
+													var no = array.indexOf(arr[i]);
+													if(no != -1)
+														bool[no] = true;
+												}
+												if(bool[0] == false)
+													updateCard(arr[0],result[0]);
+												if(bool[1] == false)
+													updateCard(arr[1],result[1]);
+												if(bool[2] == false)
+													updateCard(arr[2],result[2]);
+												if(bool[3] == false)
+													updateCard(arr[3],result[3]);
+												if(bool[4] == false)
+													updateCard(arr[4],result[4]);
 											}
-											var bool = [false,false,false,false,false];
-											var a = arr;
-											for(var i=0;i<5;i++){
-												var no = array.indexOf(arr[i]);
-												if(no != -1)
-													bool[no] = true;
+										});
+									}
+								});
+							}
+						});
+					}
+					else{
+						$('.checkbox').each(function(){
+							if($(this).prop('checked')==true){
+								var count = 1;
+								var value = this.value;
+								var card = Parse.Object.extend('card');
+								var innerQuery = new Parse.Query(card);
+								innerQuery.equalTo('objectId',value);
+								innerQuery.first({
+									success: function(data){
+										var BC = Parse.Object.extend('BattleCard');
+										var bc = new BC();
+										bc.set('user',Parse.User.current());
+										bc.set('card',data);
+										bc.set('flow',count);
+										bc.save(null,{
+											success: function(bc){
+												count++;
+											},
+											error: function(bc, error){
+												console.log(error);
 											}
-											if(bool[0] == false)
-												updateCard(arr[0],result[0]);
-											if(bool[1] == false)
-												updateCard(arr[1],result[1]);
-											if(bool[2] == false)
-												updateCard(arr[2],result[2]);
-											if(bool[3] == false)
-												updateCard(arr[3],result[3]);
-											if(bool[4] == false)
-												updateCard(arr[4],result[4]);
-										}
-									});
-								}
-							});
-						}
-					});
+										});
+									}
+								});
+							}
+						});
+					}
 					changeBattleCardHTML();
 					$('.checkbox').each(function(){
 					 var value = $(this).val();
